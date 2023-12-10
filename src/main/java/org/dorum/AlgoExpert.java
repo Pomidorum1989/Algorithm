@@ -1,0 +1,108 @@
+package org.dorum;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
+public class AlgoExpert {
+    public static void main(String[] args) {
+        int[] array = new int[]{2, 1, 3, 5, 8, 6, 4};
+//        Arrays.sort(array);
+//        System.out.println(binarySearch(array, 0));
+//        System.out.println(validateSubSequence(array, new int[]{}));
+//        sumOfNUmber(array, 10);
+//        sumOfTwo(array, 10);
+    }
+
+    public static void sumOfTwo(int[] array, int sum) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < array.length; i++) {
+            if (map.containsKey(array[i])) {
+                System.out.println("Numbers " + array[i] + " and " + array[map.get(array[i])]);
+            }
+            map.put(sum - array[i], i);
+        }
+        System.out.println(map);
+    }
+
+    public static void sumOfNUmber(int[] array, int sum) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[i] + array[j] == sum) {
+                    System.out.println(array[i] + " with index '" + i + "'");
+                    System.out.println(array[j] + " with index '" + j + "'");
+                } else {
+                    System.out.println(array[i] + " + " + array[j] + " = " + (array[i] + array[j]));
+                }
+            }
+        }
+    }
+
+    public static boolean validateSubSequence(int[] inputArray, int[] sequenceArray) {
+        int inputPointer = 0;
+        int sequencePointer = 0;
+        int inputLength = inputArray.length;
+        int sequenceLength = sequenceArray.length;
+        if (inputLength == 0 || sequenceLength == 0) {
+            return false;
+        }
+        while (inputLength > inputPointer) {
+            if (inputArray[inputPointer] == sequenceArray[sequencePointer]) {
+                System.out.println("We have found a match on indexes: " + inputPointer + " | " + sequencePointer);
+                sequencePointer++;
+            }
+            inputPointer++;
+            if (sequencePointer == sequenceLength) {
+                System.out.println("Input array has subsequence inside");
+                return true;
+            }
+        }
+        System.out.println("Input array doesn't have subsequence inside");
+        return false;
+    }
+
+    public static class Node {
+        public int value;
+        public Node left;
+        public Node right;
+
+        public Node(int value) {
+            this.value = value;
+        }
+    }
+
+    public static int findNearestNode(Node node, int target) {
+        return 0;
+    }
+
+    public static int binarySearch(int[] array, int target) {
+        System.out.println(Arrays.toString(array));
+        int leftIndex = 0;
+        int rightIndex = array.length - 1;
+        int middleIndex = (leftIndex + rightIndex) / 2;
+
+        System.out.println("leftIndex: " + leftIndex);
+        System.out.println("rightIndex: " + rightIndex);
+        System.out.println("middleIndex: " + middleIndex);
+        System.out.println("middle value: " + array[middleIndex]);
+        System.out.println("__________________________");
+
+        while (leftIndex <= rightIndex) {
+            middleIndex = (leftIndex + rightIndex) / 2;
+            if (array[middleIndex] == target) {
+                return middleIndex;
+            }
+            if (array[middleIndex] > target) {
+                rightIndex = middleIndex - 1;
+            } else {
+                leftIndex = middleIndex + 1;
+            }
+            System.out.println("leftIndex: " + leftIndex);
+            System.out.println("rightIndex: " + rightIndex);
+            System.out.println("middleIndex: " + middleIndex);
+            System.out.println("middle value: " + array[middleIndex]);
+            System.out.println("__________________________");
+        }
+        return -1;
+    }
+}

@@ -7,11 +7,30 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+//https://www.linkedin.com/learning/nail-your-java-interview-2/the-secret-to-nailing-your-java-interview?u=106534538
 public class LinkedIn {
     public static void main(String[] args) {
-        String testString = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
-        String testString2 = "Penguins are aquatic, flightless birds that are highly adapted to life in the water. Their distinct tuxedo-like appearance is called countershading, a form of camouflage that helps keep them safe in the water. Penguins do have wing-bones, though they are flipper-like and extremely suited to swimming. Penguins are found almost exclusively in the southern hemisphere, where they catch their food underwater and raise their young on land.";
-        String testString3 = "Students seek relief from rising prices through the purchase of used copies of textbooks, which tend to be less expensive. Most college bookstores offer used copies of textbooks at lower prices. Most bookstores will also buy used copies back from students at the end of a term if the book is going to be re-used at the school. Books that are not being re-used at the school are often purchased by an off-campus wholesaler for 0-30% of the new cost, for distribution to other bookstores where the books will be sold. Textbook companies have countered this by encouraging faculty to assign homework that must be done on the publisher's website. If a student has a new textbook, then he or she can use the pass code in the book to register on the site. If the student has purchased a used textbook, then he or she must pay money directly to the publisher in order to access the website and complete assigned homework. ";
+        String testString = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has " +
+                "been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of" +
+                " type and scrambled it to make a type specimen book. It has survived not only five centuries, but also" +
+                " the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s" +
+                " with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop" +
+                " publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+        String testString2 = "Penguins are aquatic, flightless birds that are highly adapted to life in the water. " +
+                "Their distinct tuxedo-like appearance is called countershading, a form of camouflage that helps keep " +
+                "them safe in the water. Penguins do have wing-bones, though they are flipper-like and extremely suited" +
+                " to swimming. Penguins are found almost exclusively in the southern hemisphere, where they catch their" +
+                " food underwater and raise their young on land.";
+        String testString3 = "Students seek relief from rising prices through the purchase of used copies of textbooks," +
+                " which tend to be less expensive. Most college bookstores offer used copies of textbooks at lower" +
+                " prices. Most bookstores will also buy used copies back from students at the end of a term if the book" +
+                " is going to be re-used at the school. Books that are not being re-used at the school are often" +
+                " purchased by an off-campus wholesaler for 0-30% of the new cost, for distribution to other bookstores" +
+                " where the books will be sold. Textbook companies have countered this by encouraging faculty to assign" +
+                " homework that must be done on the publisher's website. If a student has a new textbook, then he or she" +
+                " can use the pass code in the book to register on the site. If the student has purchased a used" +
+                " textbook, then he or she must pay money directly to the publisher in order to access the website and" +
+                " complete assigned homework. ";
         countWordsInSentence(testString);
         countWordsInSentence(testString2);
         countWordsInSentence(testString3);
@@ -38,7 +57,6 @@ public class LinkedIn {
 //        CustomNode.printList(head);
 
 //        deleteMiddleNode();
-
 
 //        maximumProductOf2Numbers(new int[] {5, 3, 2, 5, 7, 0});
 //        maximumProductOf2Numbers(new int[] {-2, -1, -3, 4, -8});
@@ -103,9 +121,7 @@ public class LinkedIn {
     }
 
     public static boolean findParentheses1(String input) {
-        Map<Character, Character> parentheses = Map.of(')', '(',
-                '>', '<',
-                ']', '[');
+        Map<Character, Character> parentheses = Map.of(')', '(', '>', '<', ']', '[');
         Stack<Character> stack = new Stack<>();
         for (int i = 0; i < input.length(); i++) {
             char current = input.charAt(i);
@@ -189,11 +205,8 @@ public class LinkedIn {
             System.out.println("Less than 2 numbers in the array");
             return;
         }
-        int maximumPositiveNumberOne = 0;
-        int maximumPositiveNumberTwo = 0;
-
-        int minimumPositiveNumberOne = 0;
-        int minimumPositiveNumberTwo = 0;
+        int maximumPositiveNumberOne = 0, maximumPositiveNumberTwo = 0;
+        int minimumPositiveNumberOne = 0, minimumPositiveNumberTwo = 0;
 
         for (int j : array) {
             if (j > 0) {
@@ -397,7 +410,6 @@ public class LinkedIn {
 
     public static int romanToInt(String s) {
         Map<Character, Integer> m = new HashMap<>();
-
         m.put('I', 1);
         m.put('V', 5);
         m.put('X', 10);

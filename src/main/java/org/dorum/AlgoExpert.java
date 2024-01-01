@@ -61,20 +61,6 @@ public class AlgoExpert {
         return false;
     }
 
-    public static class Node {
-        public int value;
-        public Node left;
-        public Node right;
-
-        public Node(int value) {
-            this.value = value;
-        }
-    }
-
-    public static int findNearestNode(Node node, int target) {
-        return 0;
-    }
-
     public static int binarySearch(int[] array, int target) {
         System.out.println(Arrays.toString(array));
         int leftIndex = 0;

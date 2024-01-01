@@ -1,39 +1,37 @@
 package org.dorum;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class Sorting {
     public static void main(String[] args) {
-//        int[] inputArray = new int[10];
-//        Random random = new Random();
-//        for (int i = 0; i < inputArray.length; i++) {
-//            inputArray[i] = random.nextInt(100);
-//        }
-
-        int[] inputArray = new int[]{10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
-        System.out.println("Input:" + Arrays.toString(inputArray));
+        int[] inputArray = new int[100000];
+        Random random = new Random();
+        for (int i = 0; i < inputArray.length; i++) {
+            inputArray[i] = random.nextInt(100);
+        }
+//        System.out.println("Input:" + Arrays.toString(inputArray));
+//        bubbleSort(inputArray);
+        long start = System.currentTimeMillis();
         mergeSort(inputArray);
-        System.out.println("Output:" + Arrays.toString(inputArray));
+        long end = System.currentTimeMillis();
+        System.out.println((end - start) / 1000);
+//        System.out.println("Output:" + Arrays.toString(inputArray));
     }
 
-    public static String invertString(String text) {
-        String temp = "";
-        for (int i = text.length() - 1; i >= 0; i--) {
-            if (Character.isLetter(text.charAt(i))) {
-                temp = temp.concat(String.valueOf(text.charAt(i)));
+    public static void bubbleSort(int[] inputArray) {
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < inputArray.length - 1; i++) {
+            for (int j = 0; j < inputArray.length - i - 1; j++) {
+                if (inputArray[j] < inputArray[j + 1]) {
+                    int temp = inputArray[i];
+                    inputArray[i] = inputArray[j + 1];
+                    inputArray[j + 1] = temp;
+                }
             }
         }
-        String result = "";
-        int j = 0;
-        for (int i = 0; i < text.length(); i++) {
-            if (Character.isDigit(text.charAt(i))) {
-                result = result.concat(String.valueOf(text.charAt(i)));
-            } else {
-                result = result.concat(String.valueOf(temp.charAt(j)));
-                j++;
-            }
-        }
-        return result;
+        long end = System.currentTimeMillis();
+        System.out.println((end - start) / 1000);
     }
 
     public static void mergeSort(int[] inputArray) {
@@ -45,17 +43,12 @@ public class Sorting {
             return;
         }
 
-        for (int i = 0; i < leftArray.length; i++) {
-            leftArray[i] = inputArray[i];
-        }
+        System.arraycopy(inputArray, 0, leftArray, 0, leftArray.length);
+        System.arraycopy(inputArray, middleIndex, rightArray, 0, rightArray.length);
 
-        for (int i = 0; i < rightArray.length; i++) {
-            rightArray[i] = inputArray[i + middleIndex];
-        }
-
-        System.out.println("Left: " + Arrays.toString(leftArray));
-        System.out.println("Right: " + Arrays.toString(rightArray));
-        System.out.println("______________________");
+//        System.out.println("Left: " + Arrays.toString(leftArray));
+//        System.out.println("Right: " + Arrays.toString(rightArray));
+//        System.out.println("______________________");
 
         mergeSort(leftArray);
         mergeSort(rightArray);

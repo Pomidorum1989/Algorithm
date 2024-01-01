@@ -7,6 +7,18 @@ public class HackerRank {
 
     public static void main(String[] args) {
 
+        SinglyLinkedList llist = new SinglyLinkedList();
+        llist.insertNode(16);
+        llist.insertNode(13);
+        llist.insertNode(7);
+        printList(llist.head);
+        printList(insertNodeAtPosition(llist.head, 1, 2));
+
+//        printList(reverse(llist.head));
+
+//        System.out.println(superDigit("9875", 4));
+//        System.out.println(superDigit("123", 3));
+
 //        System.out.println(counterGame(1073741824));
 //        System.out.println(counterGame1(1073741824));
 //
@@ -23,7 +35,6 @@ public class HackerRank {
 
 //        System.out.println(maxMin(2, new ArrayList<>(Arrays.asList(1, 4, 7, 2))));
 //        System.out.println(maxMin(4, new ArrayList<>(Arrays.asList(1, 2, 3, 4, 10, 20, 30, 40, 100, 200))));
-
 
 //        System.out.println(caesarCipher("abcdefghijklmnopqrstuvwxyz", 3));
 
@@ -74,9 +85,9 @@ public class HackerRank {
 //        createFibonacciSequence(10);
 
 //        fibonacciRecursion(10);
-
     }
 
+    //https://www.hackerrank.com/challenges/one-month-preparation-kit-plus-minus/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=one-month-preparation-kit&playlist_slugs%5B%5D=one-month-week-one
     public static void plusMinus(List<Integer> arr) {
         double zero = 0, positive = 0, negative = 0;
         double arrayLength = arr.size();
@@ -90,7 +101,6 @@ public class HackerRank {
             }
         }
         DecimalFormat dec = new DecimalFormat("#0.000000");
-
         System.out.println(arrayLength);
         System.out.println(dec.format(negative / arrayLength));
         System.out.println(dec.format(positive / arrayLength));
@@ -439,7 +449,6 @@ public class HackerRank {
         int temp = a[mid];
         a[mid] = a[n - 1];
         a[n - 1] = temp;
-
         int st = mid + 1;
         int ed = n - 2;
         while (st <= ed) {
@@ -506,7 +515,6 @@ public class HackerRank {
 
 
     public static int maxMin(int k, List<Integer> arr) {
-        // Write your code here
         Collections.sort(arr);
         int unfairness = Integer.MAX_VALUE;
         for (int i = 0; i < arr.size() - k + 1; i++) {
@@ -539,8 +547,7 @@ public class HackerRank {
     public static String balancedSums(List<Integer> arr) {
         System.out.println("Input array: " + arr);
         for (int i = 0; i < arr.size(); i++) {
-            int leftSum = 0;
-            int rightSum = 0;
+            int leftSum = 0, rightSum = 0;
             boolean flag = false;
             for (int j = 0; j < arr.size(); j++) {
                 if (i == j) {
@@ -578,18 +585,12 @@ public class HackerRank {
 
     public static int flippingTheMatrix(List<List<Integer>> matrix) {
         int n = matrix.size() / 2;
-
         int first = Collections.max(Arrays.asList(
                 matrix.get(0).get(0),
                 matrix.get(0).get(matrix.size() - 1),
                 matrix.get(matrix.size() - 1).get(0),
                 matrix.get(matrix.size() - 1).get(matrix.size() - 1)));
-
-
-        int second = 0;
-        int third = 0;
-        int fourth = 0;
-
+        int second = 0, third = 0, fourth = 0;
         return 0;
     }
 
@@ -653,4 +654,91 @@ public class HackerRank {
         return turn % 2 == 0 ? "Richard" : "Louise";
     }
 
+    public static int superDigit(String n, int k) {
+        System.out.println(n);
+        long result = 0;
+        for (int i = 0; i < n.length(); i++) {
+            result += k * Long.parseLong(String.valueOf(n.charAt(i)));
+        }
+        k = 1;
+        n = String.valueOf(result);
+        if (result >= 10) {
+            result = superDigit(n, k);
+        }
+        return (int) result;
+    }
+
+
+    public static class SinglyLinkedListNode {
+        public int data;
+        public SinglyLinkedListNode next;
+
+        public SinglyLinkedListNode(int nodeData) {
+            this.data = nodeData;
+            this.next = null;
+        }
+    }
+
+    public static class SinglyLinkedList {
+        public SinglyLinkedListNode head;
+        public SinglyLinkedListNode tail;
+
+        public SinglyLinkedList() {
+            this.head = null;
+            this.tail = null;
+        }
+
+        public void insertNode(int nodeData) {
+            SinglyLinkedListNode node = new SinglyLinkedListNode(nodeData);
+            if (this.head == null) {
+                this.head = node;
+            } else {
+                this.tail.next = node;
+            }
+            this.tail = node;
+        }
+    }
+
+    public static void printList(SinglyLinkedListNode node) {
+        int counter = 0;
+        while (node != null) {
+            System.out.println(node.data);
+            node = node.next;
+            counter++;
+        }
+        System.out.println("Amount of nodes: " + counter);
+    }
+
+    public static SinglyLinkedListNode reverse(SinglyLinkedListNode head) {
+        SinglyLinkedListNode currentNode = head;
+        SinglyLinkedListNode previousNode = null;
+        while (currentNode != null) {
+            SinglyLinkedListNode nextNode = currentNode.next;
+            currentNode.next = previousNode;
+            previousNode = currentNode;
+
+            currentNode = nextNode;
+        }
+        return previousNode;
+    }
+
+    //https://www.hackerrank.com/challenges/one-month-preparation-kit-insert-a-node-at-a-specific-position-in-a-linked-list/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=one-month-preparation-kit&playlist_slugs%5B%5D=one-month-week-three
+    public static SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode llist, int data, int position) {
+        SinglyLinkedListNode currentNode = llist,
+                resultHead = new SinglyLinkedListNode(0),
+                result = resultHead;
+        int counter = 0;
+        while (currentNode != null) {
+            if (counter == position) {
+                result.next = new SinglyLinkedListNode(data);
+                result.next.next = currentNode;
+                break;
+            }
+            counter++;
+            result.next = new SinglyLinkedListNode(currentNode.data);
+            result = result.next;
+            currentNode = currentNode.next;
+        }
+        return resultHead.next;
+    }
 }

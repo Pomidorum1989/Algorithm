@@ -6,10 +6,20 @@ import java.util.*;
 public class LeetCode {
 
     public static void main(String[] args) {
+        fizzBuzz(15);
+        fizzBuzz1(15);
+
+//        rotate2(new int[]{1, 2, 3, 4, 5, 6, 7}, 3);
+//        System.out.println(removeDuplicates3(new int[]{1, 1, 1, 1, 2, 2, 3}));
+
+//        System.out.println(removeElement(new int[]{3, 2, 2, 3}, 3));
+//        System.out.println(removeElement(new int[]{0, 1, 2, 2, 3, 0, 4, 2}, 2));
+
+//        merge(new int[]{1, 2, 3, 0, 0, 0}, 3, new int[]{2, 5, 6}, 3);
 
 
-        System.out.println(longestCommonPrefix(new String[]{"reflower", "flow", "flight"}));
-        System.out.println(longestCommonPart(new String[]{"flower", "flow", "flight"}));
+//        System.out.println(longestCommonPrefix(new String[]{"reflower", "flow", "flight"}));
+//        System.out.println(longestCommonPart(new String[]{"flower", "flow", "flight"}));
 
 //        System.out.println(strStr1("a", "a"));
 
@@ -523,5 +533,156 @@ public class LeetCode {
             length--;
         }
         return "";
+    }
+
+    //https://leetcode.com/problems/merge-sorted-array/description/?envType=study-plan-v2&envId=top-interview-150
+    public static void merge(int[] nums1, int m, int[] nums2, int n) {
+        System.out.println(Arrays.toString(nums1));
+        System.out.println(Arrays.toString(nums2));
+
+        for (int i = 0; i < nums2.length; i++) {
+            nums1[nums1.length - i - 1] = nums2[nums2.length - i - 1];
+        }
+
+        for (int i = 0; i < nums1.length; i++) {
+            for (int j = 0; j < nums1.length; j++) {
+                if (nums1[i] < nums1[j]) {
+                    int temp = nums1[j];
+                    nums1[j] = nums1[i];
+                    nums1[i] = temp;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(nums1));
+    }
+
+    //https://leetcode.com/problems/remove-element/?envType=study-plan-v2&envId=top-interview-150
+    public static int removeElement(int[] nums, int val) {
+        System.out.println(Arrays.toString(nums));
+        int counter = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != val) {
+                nums[counter] = nums[i];
+                counter++;
+            }
+        }
+        System.out.println(Arrays.toString(nums));
+        return counter;
+    }
+
+    //https://leetcode.com/problems/remove-duplicates-from-sorted-array/?envType=study-plan-v2&envId=top-interview-150
+    public static int removeDuplicates1(int[] nums) {
+        System.out.println(Arrays.toString(nums));
+        Set<Integer> duplicates = new LinkedHashSet<>();
+        for (int num : nums) {
+            duplicates.add(num);
+        }
+        int index = 0;
+        for (Integer duplicate : duplicates) {
+            nums[index] = duplicate;
+            index++;
+        }
+        System.out.println(Arrays.toString(nums));
+        return index;
+    }
+
+    public static void removeDuplicates2(int[] nums) {
+        System.out.println(Arrays.toString(nums));
+        int previousPointer = 0;
+        int currentPointer = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[previousPointer] != nums[i]) {
+                nums[currentPointer] = nums[i];
+                previousPointer = currentPointer;
+                currentPointer++;
+            }
+            System.out.println(Arrays.toString(nums));
+        }
+        System.out.println(Arrays.toString(nums));
+    }
+
+    public static int removeDuplicates4(int[] nums) {
+        int j = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] != nums[i - 1]) {
+                nums[j] = nums[i];
+                j++;
+            }
+        }
+        return j;
+    }
+
+    //https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/?envType=study-plan-v2&envId=top-interview-150
+    public static int removeDuplicates3(int[] nums) {
+        System.out.println(Arrays.toString(nums));
+
+        int j = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (j == 1 || nums[i] != nums[j - 2]) {
+                nums[j] = nums[i];
+                j++;
+            }
+        }
+
+        System.out.println(Arrays.toString(nums));
+        return j;
+    }
+
+    public static void rotate2(int[] nums, int k) {
+        for (int i = 0; i < k; i++) {
+            for (int j = 0; j < nums.length; j++) {
+                int temp = nums[0];
+                nums[0] = nums[j];
+                nums[j] = temp;
+            }
+        }
+        System.out.println(k % nums.length);
+        System.out.println(Arrays.toString(nums));
+    }
+
+    //https://leetcode.com/problems/fizz-buzz/description/
+    public static List<String> fizzBuzz(int n) {
+        List<String> answer = new ArrayList<>();
+        for (int i = 1; i <= n; i++) {
+            boolean isThree = i % 3 == 0;
+            boolean isFive = i % 5 == 0;
+            boolean isThreeFive = isThree && isFive;
+
+            if (isThreeFive) {
+                answer.add("FizzBuzz");
+            } else if (isThree) {
+                answer.add("Fizz");
+            } else if (isFive) {
+                answer.add("Buzz");
+            } else {
+                answer.add(String.valueOf(i));
+            }
+        }
+        System.out.println(answer);
+        return answer;
+    }
+
+    public static List<String> fizzBuzz1(int n) {
+        List<String> answer = new ArrayList<>();
+        for (int i = 1; i <= n; i++) {
+            boolean isThree = i % 3 == 0;
+            boolean isFive = i % 5 == 0;
+
+            switch ((isThree ? 1 : 0) + (isFive ? 2 : 0)) {
+                case 3:
+                    answer.add("FizzBuzz");
+                    break;
+                case 1:
+                    answer.add("Fizz");
+                    break;
+                case 2:
+                    answer.add("Buzz");
+                    break;
+                default:
+                    answer.add(String.valueOf(i));
+            }
+        }
+        System.out.println(answer);
+        return answer;
     }
 }

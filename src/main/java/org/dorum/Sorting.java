@@ -1,6 +1,5 @@
 package org.dorum;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class Sorting {

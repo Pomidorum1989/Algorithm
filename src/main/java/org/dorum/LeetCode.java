@@ -6,8 +6,16 @@ import java.util.*;
 public class LeetCode {
 
     public static void main(String[] args) {
-        fizzBuzz(15);
-        fizzBuzz1(15);
+
+
+//        compress(new char[]{'a','a','b','b','c','c','c'});
+//        compress(new char[]{'a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b'});
+//        compress(new char[]{'a'});
+
+//        removeDuplicates("abbaca");
+
+//        fizzBuzz(15);
+//        fizzBuzz1(15);
 
 //        rotate2(new int[]{1, 2, 3, 4, 5, 6, 7}, 3);
 //        System.out.println(removeDuplicates3(new int[]{1, 1, 1, 1, 2, 2, 3}));
@@ -69,7 +77,7 @@ public class LeetCode {
 //        System.out.println(removeDuplicates(new int[]{1, 2, 2, 3, 4, 4, 5}));
 //        System.out.println(removeDuplicates(new int[]{1, 1, 2}));
 //        System.out.println(removeDuplicates(new int[]{1, 1}));
-//        System.out.println(maxProfit(new int[]{7, 1, 5, 3, 6, 4}));
+//        System.out.println(maxProfit1(new int[]{7, 1, 5, 3, 6, 4}));
 //        rotate1(new int[]{1, 2, 3, 4, 5}, 2);
 //        reverse(new int[]{1, 2, 3, 4, 5});
 //        reverse1(new int[]{1, 2, 3, 4, 5});
@@ -102,16 +110,41 @@ public class LeetCode {
     }
 
     //https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/564/
+    //https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/?envType=study-plan-v2&envId=top-interview-150
     public static int maxProfit(int[] prices) {
-        int profit = 0, currentProfit;
-        for (int i = 0; i < prices.length - 1; i++) {
-            if (prices[i] < prices[i + 1]) {
-                currentProfit = prices[i + 1] - prices[i];
-                System.out.println("Current profit: " + currentProfit);
-                profit = profit + currentProfit;
+        int finalProfit = 0;
+        for (int i = 0; i < prices.length; i++) {
+            for (int j = i; j < prices.length; j++) {
+                if (prices[j] - prices[i] > finalProfit) {
+                    finalProfit = prices[j] - prices[i];
+                }
             }
         }
+        System.out.println("Profit: " + finalProfit);
+        return finalProfit;
+    }
+
+    public static int maxProfit1(int[] prices) {
+        System.out.println(Arrays.toString(prices));
+        int profit = 0;
+        int buyPrice = prices[0];
+        for (int i = 1; i < prices.length; i++) {
+            if (buyPrice > prices[i]) {
+                buyPrice = prices[i];
+            }
+            profit = Math.max(profit, prices[i] - buyPrice);
+
+        }
         System.out.println("Profit: " + profit);
+        return profit;
+    }
+
+    //https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/?envType=study-plan-v2&envId=top-interview-150
+    public static int maxProfit2(int[] prices) {
+        System.out.println(Arrays.toString(prices));
+        int profit = 0;
+        int buyPrice = prices[0];
+
         return profit;
     }
 
@@ -684,5 +717,63 @@ public class LeetCode {
         }
         System.out.println(answer);
         return answer;
+    }
+
+    //https://leetcode.com/problems/string-compression/
+    public static int compress(char[] chars) {
+        Map<Character, Integer> linkedHashMap = new LinkedHashMap<>();
+        for (char aChar : chars) {
+            if (linkedHashMap.containsKey(aChar)) {
+                linkedHashMap.put(aChar, linkedHashMap.get(aChar) + 1);
+            } else {
+                linkedHashMap.put(aChar, 1);
+            }
+        }
+
+        System.out.println(linkedHashMap);
+
+        int i = 0;
+        for (Map.Entry<Character, Integer> entry : linkedHashMap.entrySet()) {
+            Character key = entry.getKey();
+            Integer value = entry.getValue();
+            chars[i] = key;
+            if (value == 1) {
+                i++;
+            } else {
+                if (chars.length > 1) {
+                    chars[i + 1] = value.toString().toCharArray()[0];
+                    if (value.toString().toCharArray().length > 1) {
+                        chars[i + 2] = value.toString().toCharArray()[1];
+                        i++;
+                    }
+                    i += 2;
+                }
+            }
+        }
+        System.out.println(linkedHashMap.size());
+        System.out.println(Arrays.toString(chars));
+        if (linkedHashMap.size() == 1) {
+            return 1;
+        }
+        return linkedHashMap.size() * 2;
+    }
+
+    //https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/
+    public static String removeDuplicates(String s) {
+        System.out.println(s);
+        StringBuilder sb = new StringBuilder();
+
+        for (char c : s.toCharArray()) {
+            int length = sb.length();
+            if (length > 0 && sb.charAt(length - 1) == c) {
+                sb.deleteCharAt(length - 1);
+            } else {
+                sb.append(c);
+            }
+            System.out.println(sb);
+        }
+
+        System.out.println(sb);
+        return sb.toString();
     }
 }

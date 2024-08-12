@@ -9,187 +9,187 @@ This repository contains solutions to various algorithmic problems solved on pla
 LeetCode [`LeetCode.java`](https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java)
 
 ## LeetCode Method References
-Method: plusOne1
-Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L217<br>
-Problem link: <br>
----------------------------------------------------------------------------<br>
-Method: isUgly
+Method: isUgly<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L800<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: rotate
+Method: plusOne1<br>
+Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L217<br>
+Problem link: <br>
+---------------------------------------------------------------------------<br>
+Method: rotate<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L68<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: wordPattern
+Method: wordPattern<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L930<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: isHappy
+Method: isHappy<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L1027<br>
 Problem link: https://leetcode.com/problems/happy-number/<br>
 ---------------------------------------------------------------------------<br>
-Method: plusOne
+Method: plusOne<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L198<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: isAnagram
+Method: isAnagram<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L362<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: reverseString
+Method: reverseString<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L270<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: isPalindrome
+Method: isPalindrome<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L425<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: canConstruct
+Method: canConstruct<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L869<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: firstUniqueChar
+Method: firstUniqueChar<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L326<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: isIsomorphic
-Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L900<br>
-Problem link: <br>
----------------------------------------------------------------------------<br>
-Method: myAtoi
+Method: myAtoi<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L487<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: isPalindrome2
+Method: isIsomorphic<br>
+Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L900<br>
+Problem link: <br>
+---------------------------------------------------------------------------<br>
+Method: isPalindrome2<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L473<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: isPalindrome1
+Method: isPalindrome1<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L442<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: strStr
+Method: strStr<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L521<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: merge
+Method: merge<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L622<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: maxProfit
+Method: maxProfit<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L18<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: firstUniqueChar1
+Method: firstUniqueChar1<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L349<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: longestCommonPart
+Method: longestCommonPart<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L551<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: longestCommonPrefix1
+Method: longestCommonPrefix1<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L599<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: intersect
+Method: intersect<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L172<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: compress
+Method: compress<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L763<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: removeDuplicates4
+Method: removeDuplicates4<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L731<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: isValid
+Method: isValid<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L829<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: removeDuplicates5
+Method: removeDuplicates5<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L746<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: removeDuplicates2
+Method: removeDuplicates2<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L699<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: containsNearbyDuplicate1
-Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L1009<br>
-Problem link: https://leetcode.com/problems/contains-duplicate-ii/<br>
----------------------------------------------------------------------------<br>
-Method: removeDuplicates3
+Method: removeDuplicates3<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L716<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: removeDuplicates1
+Method: containsNearbyDuplicate1<br>
+Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L1009<br>
+Problem link: https://leetcode.com/problems/contains-duplicate-ii/<br>
+---------------------------------------------------------------------------<br>
+Method: removeDuplicates1<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L682<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: reverse
+Method: reverse<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L113<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: maxProfit2
-Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L52<br>
-Problem link: <br>
----------------------------------------------------------------------------<br>
-Method: isAnagram1
-Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L377<br>
-Problem link: <br>
----------------------------------------------------------------------------<br>
-Method: twoSum
+Method: twoSum<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L234<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: maxProfit1
+Method: maxProfit2<br>
+Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L52<br>
+Problem link: <br>
+---------------------------------------------------------------------------<br>
+Method: isAnagram1<br>
+Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L377<br>
+Problem link: <br>
+---------------------------------------------------------------------------<br>
+Method: maxProfit1<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L36<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: lengthOfLastWord
+Method: lengthOfLastWord<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L820<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: isAnagram3
+Method: isAnagram3<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L398<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: removeDuplicates
+Method: removeDuplicates<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L656<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: reverse1
+Method: reverse1<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L103<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: summaryRanges
+Method: summaryRanges<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L964<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: rotate1
+Method: rotate1<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L82<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: rotate2
+Method: rotate2<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L93<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: removeElement
+Method: removeElement<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L641<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: longestCommonPrefix
+Method: longestCommonPrefix<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L575<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: strStr1
+Method: strStr1<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L532<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>
-Method: containsNearbyDuplicate
+Method: containsNearbyDuplicate<br>
 Solution link: https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L994<br>
 Problem link: <br>
 ---------------------------------------------------------------------------<br>

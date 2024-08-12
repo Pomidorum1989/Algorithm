@@ -1,4 +1,4 @@
-package org.dorum;
+package org.dorum.algo;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

@@ -1,4 +1,4 @@
-package org.dorum;
+package org.dorum.algo;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -244,7 +244,9 @@ public class Codility {
         return -1;
     }
 
-    //https://app.codility.com/programmers/lessons/4-counting_elements/
+    /**
+     * <a href="https://app.codility.com/programmers/lessons/4-counting_elements/">...</a>
+     */
     public static int permCheck(int[] A) {
         int expectedSum = (A.length * (A.length + 1)) / 2;
         int currentSum = 0;
@@ -254,6 +256,9 @@ public class Codility {
         return currentSum == expectedSum ? 1 : 0;
     }
 
+    /**
+     * <a href="https://app.codility.com/programmers/lessons/4-counting_elements/">...</a>
+     */
     public static int permCheck1(int[] A) {
         Set<Integer> set = new HashSet<>();
         for (int i = 1; i <= A.length; i++) {
@@ -269,7 +274,9 @@ public class Codility {
         return 0;
     }
 
-    //https://app.codility.com/programmers/lessons/4-counting_elements/
+    /**
+     * <a href="https://app.codility.com/programmers/lessons/4-counting_elements/">...</a>
+     */
     public static int missingInteger(int[] A) {
         Set<Integer> set = new HashSet<>();
         for (int i = 1; i <= A.length + 1; i++) {
@@ -283,7 +290,9 @@ public class Codility {
         return set.iterator().next();
     }
 
-    //https://app.codility.com/programmers/lessons/5-prefix_sums/
+    /**
+     * <a href="https://app.codility.com/programmers/lessons/5-prefix_sums/">...</a>
+     */
     public static int passingCars(int[] A) {
         System.out.println("Input array:" + Arrays.toString(A));
         int carsTravellingEast = 0;
@@ -303,7 +312,9 @@ public class Codility {
         return (int) passedCars;
     }
 
-    //https://app.codility.com/programmers/lessons/5-prefix_sums/
+    /**
+     * <a href="https://app.codility.com/programmers/lessons/5-prefix_sums/">...</a>
+     */
     public static int passingCars1(int[] A) {
         System.out.println("Input array:" + Arrays.toString(A));
         int sum = 0;

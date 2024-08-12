@@ -1,4 +1,4 @@
-package org.dorum;
+package org.dorum.algo;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -3,23 +3,58 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>org.dorum</groupId>
     <artifactId>algorithms</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <name>Algorithms</name>
+    <description>LeetCode, HackerRank, Habr, LinkedIn</description>
+
+    <developers>
+        <developer>
+            <id>pomidorum</id>
+            <name>VDorum</name>
+            <email>valentinedorum@gmail.com</email>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <javaassist.version>3.30.2-GA</javaassist.version>
+        <lombock.version>1.18.34</lombock.version>
+        <maven.site.plugin.version>4.0.0-M16</maven.site.plugin.version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.30</version>
-<!--            <scope>provided</scope>-->
+            <version>${lombock.version}</version>
+            <!--            <scope>provided</scope>-->
+        </dependency>
+        <dependency>
+            <groupId>org.javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>${javaassist.version}</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>${maven.site.plugin.version}</version>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

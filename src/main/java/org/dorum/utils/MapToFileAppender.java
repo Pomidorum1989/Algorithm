@@ -1,11 +1,27 @@
 package org.dorum.utils;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 import java.io.*;
 import java.util.List;
 import java.util.Map;
 
 public class MapToFileAppender {
-    public static void appendAfterStatement(Map<String, List<String>> map, String filePath, String targetStatement) {
+    private static final String REPO_LINK = "https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/";
+
+    @AllArgsConstructor
+    @Getter
+    public enum TaskType {
+        LEET_CODE("LeetCode"),
+        CODILITY("Codility"),
+        HACKER_RANK("HackerRank"),
+        LINKED_IN("LinkedIn");
+
+        private final String type;
+    }
+
+    public static void appendAfterStatement(Map<String, List<String>> map, String filePath, String targetStatement, TaskType taskType) {
         // Temporary file to store the updated content
         File tempFile = new File(filePath + ".tmp");
 
@@ -29,10 +45,9 @@ public class MapToFileAppender {
                         String key = entry.getKey();
                         List<String> values = entry.getValue();
                         writer.write("Method: " + "[`" + key + "`]" +
-                                "(https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L"
-                                + values.get(0) + ")<br>");
+                                "(" + REPO_LINK + taskType.getType() + ".java#L" + values.get(0) + ")<br>");
                         writer.newLine();
-                        writer.write("Problem link: " + values.get(1) + "<br>");
+                        writer.write("Problem link: " + "[`" + key + "`]" + "(" + values.get(1) + ")<br>");
                         writer.newLine();
                         writer.write("---------------------------------------------------------------------------<br>");
                         writer.newLine();

@@ -7,13 +7,14 @@ import java.util.*;
 
 public class LeetCode {
 
-    private static final String LEET_CODE_LINK = "https://leetcode.com/problems/";
+    private static final String LEET_CODE_LINK = "https://leetcode.com/";
+    private static final String LC_150 = LEET_CODE_LINK + "explore/interview/card/top-interview-questions-easy/";
 
     /**
-     * <a href="https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/564/">maxProfit</a>
-     * <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/">maxProfit</a>
+     * <a href="{@link LeetCode#LC_150}92/array/564/">maxProfit</a>
+     * <a href="{@link LeetCode#LEET_CODE_LINK}best-time-to-buy-and-sell-stock/">maxProfit</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + "best-time-to-buy-and-sell-stock")
     public static int maxProfit(int[] prices) {
         int finalProfit = 0;
         for (int i = 0; i < prices.length; i++) {
@@ -28,10 +29,10 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/564/">maxProfit1</a>
-     * <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/">maxProfit1</a>
+     * <a href="{@link LeetCode#LC_150}92/array/564/">maxProfit1</a>
+     * <a href="{@link LeetCode#LEET_CODE_LINK}best-time-to-buy-and-sell-stock/">maxProfit1</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + "best-time-to-buy-and-sell-stock/")
     public static int maxProfit1(int[] prices) {
         int profit = Integer.MIN_VALUE;
         int buyPrice = prices[0];
@@ -45,9 +46,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/">maxProfit2</a>
+     * <a href="{@link LeetCode#LEET_CODE_LINK}best-time-to-buy-and-sell-stock-ii/">maxProfit2</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + "best-time-to-buy-and-sell-stock-ii/")
     public static int maxProfit2(int[] prices) {
         int profit = 0, low = 0, high = 1;
         while (high < prices.length) {
@@ -61,9 +62,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/646/">rotate</a>
+     * <a href="{@link LeetCode#LC_150}92/array/646/">rotate</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + LC_150 + "92/array/646/")
     public static void rotate(int[] nums, int k) {
         for (int i = 0; i < k; i++) {
             for (int j = 0; j < nums.length; j++) {
@@ -75,9 +76,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/646/">rotate1</a>
+     * <a href="{@link LeetCode#LC_150}92/array/646/">rotate1</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + LC_150 + "92/array/646/")
     public static void rotate1(int[] nums, int k) {
         k %= nums.length;
         reverse1(nums, 0, nums.length - 1);
@@ -86,9 +87,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/646/">rotate2</a>
+     * <a href="{@link LeetCode#LC_150}92/array/646/">rotate2</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + LC_150 + "92/array/646/")
     public static void rotate2(int[] nums, int k) {
         for (int i = 0; i < k; i++) {
             for (int j = 0; j < nums.length; j++) {
@@ -118,9 +119,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/578/">containsDuplicate</a>
+     * <a href="{@link LeetCode#LC_150}92/array/578/">containsDuplicate</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + LC_150 + "92/array/578/")
     public boolean containsDuplicate(int[] nums) {
         for (int i = 0; i < nums.length; i++) {
             for (int j = 0; j < nums.length; j++) {
@@ -133,9 +134,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/578/">containsDuplicate1</a>
+     * <a href="{@link LeetCode#LC_150}92/array/578/">containsDuplicate1</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + LC_150 + "92/array/578/")
     public boolean containsDuplicate1(int[] nums) {
         Set<Integer> set = new HashSet<>();
         for (int num : nums) {
@@ -149,9 +150,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/549/">singleNumber</a>
+     * <a href="{@link LeetCode#LC_150}92/array/549/">singleNumber</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + LC_150 + "92/array/549/")
     public int singleNumber(int[] nums) {
         Set<Integer> set = new HashSet<>();
         for (int num : nums) {
@@ -165,9 +166,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/674/">intersect</a>
+     * <a href="{@link LeetCode#LC_150}92/array/674/">intersect</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + LC_150 + "92/array/674/")
     public static int[] intersect(int[] nums1, int[] nums2) {
         Arrays.sort(nums1);
         Arrays.sort(nums2);
@@ -191,9 +192,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/559/">plusOne</a>
+     * <a href="{@link LeetCode#LC_150}92/array/559/">plusOne</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + "xplore/interview/card/top-interview-questions-easy/92/array/559/")
     public static int[] plusOne(int[] digits) {
         StringBuilder input = new StringBuilder();
         for (int digit : digits) {
@@ -210,9 +211,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/559/">plusOne1</a>
+     * <a href="{@link LeetCode#LC_150}92/array/559/">plusOne1</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + LC_150 + "92/array/559/")
     public static int[] plusOne1(int[] digits) {
         for (int i = digits.length - 1; i >= 0; i--) {
             if (digits[i] < 9) {
@@ -227,9 +228,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/546/">twoSum</a>
+     * <a href="{@link LeetCode#LC_150}92/array/546/">twoSum</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + LC_150 + "92/array/546/")
     public static int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int j = 0; j < nums.length; j++) {
@@ -244,11 +245,11 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/567/">moveZeroes</a>
+     * <a href="{@link LeetCode#LC_150}92/array/567/">moveZeroes</a>
      */
+    @RecordMethodInfo(link = LEET_CODE_LINK + LC_150 + "92/array/567/")
     public static void moveZeroes(int[] nums) {
-        int i = 0;
-        int k = 0;
+        int i = 0, k = 0;
         while (i < nums.length) {
             if (nums[i] != 0) {
                 for (int j = i; j > k; j--) {
@@ -263,9 +264,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/explore/interview/card/top-interview-questions-easy/127/strings/879/">reverseString</a>
+     * <a href="{@link LeetCode#LC_150}127/strings/879/">reverseString</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + LC_150 + "127/strings/879/")
     public static void reverseString(char[] s) {
         for (int i = 0; i < s.length / 2; i++) {
             char temp = s[i];
@@ -275,9 +276,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/explore/interview/card/top-interview-questions-easy/127/strings/880/">reverse</a>
+     * <a href="{@link LeetCode#LC_150}127/strings/880/">reverse</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + LC_150 + "127/strings/880/")
     public static int reverse(int x) {
         char[] s = String.valueOf(x).replace("-", "").toCharArray();
         for (int i = 0; i < s.length / 2; i++) {
@@ -300,9 +301,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/explore/interview/card/top-interview-questions-easy/127/strings/880/">reverse1</a>
+     * <a href="{@link LeetCode#LC_150}127/strings/880/">reverse1</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + LC_150 + "127/strings/880/")
     public static int reverse1(int x) {
         long finalNum = 0;
         while (x != 0) {
@@ -319,9 +320,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/explore/interview/card/top-interview-questions-easy/127/strings/881/">firstUniqueChar</a>
+     * <a href="{@link LeetCode#LC_150}127/strings/881/">firstUniqueChar</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + LC_150 + "127/strings/881/")
     public static int firstUniqueChar(String s) {
         for (int i = 0; i < s.length(); i++) {
             boolean flag = false;
@@ -342,9 +343,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/explore/interview/card/top-interview-questions-easy/127/strings/881/">firstUniqueChar1</a>
+     * <a href="{@link LeetCode#LC_150}127/strings/881/">firstUniqueChar1</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + LC_150 + "127/strings/881/")
     public static int firstUniqueChar1(String s) {
         for (int i = 0; i < s.length(); i++) {
             if (s.indexOf(s.charAt(i)) == s.lastIndexOf(s.charAt(i))) {
@@ -355,9 +356,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/explore/interview/card/top-interview-questions-easy/127/strings/882/">isAnagram</a>
+     * <a href="{@link LeetCode#LC_150}127/strings/882/">isAnagram</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + LC_150 + "127/strings/882/")
     public static boolean isAnagram(String s, String t) {
         if (s.length() != t.length()) {
             return false;
@@ -370,9 +371,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/explore/interview/card/top-interview-questions-easy/127/strings/882/">isAnagram1</a>
+     * <a href="{@link LeetCode#LC_150}127/strings/882/">isAnagram1</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + LC_150 + "127/strings/882/")
     public static boolean isAnagram1(String s, String t) {
         if (s.length() != t.length()) {
             return false;
@@ -391,9 +392,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/problems/valid-anagram/">isAnagram3</a>
+     * <a href="{@link LeetCode#LEET_CODE_LINK}valid-anagram/">isAnagram3</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + "valid-anagram/")
     public static boolean isAnagram3(String s, String t) {
         if (s.length() != t.length()) {
             return false;
@@ -418,9 +419,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/explore/interview/card/top-interview-questions-easy/127/strings/883/">isPalindrome</a>
+     * <a href="{@link LeetCode#LC_150}127/strings/883/">isPalindrome</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + LC_150 + "127/strings/883/")
     public static boolean isPalindrome(String s) {
         s = s.toLowerCase();
         StringBuilder input = new StringBuilder();
@@ -435,9 +436,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/explore/interview/card/top-interview-questions-easy/127/strings/883/">isPalindrome1</a>
+     * <a href="{@link LeetCode#LC_150}127/strings/883/">isPalindrome1</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + LC_150 + "127/strings/883/")
     public static boolean isPalindrome1(String s) {
         if (s.isEmpty()) {
             return true;
@@ -466,9 +467,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/explore/interview/card/top-interview-questions-easy/127/strings/883/">isPalindrome2</a>
+     * <a href="{@link LeetCode#LC_150}127/strings/883/">isPalindrome2</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + "")
     public static boolean isPalindrome2(String s) {
         String s1 = s.toLowerCase().replaceAll("[^\\w\\d]", "").replaceAll("_", "");
         for (int i = 0; i < s1.length(); i++) {
@@ -482,7 +483,7 @@ public class LeetCode {
     /**
      * <a href="https://leetcode.com/">myAtoi</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + LC_150 + "127/strings/883/")
     public static int myAtoi(String s) {
         s = s.trim();
         if (s.length() == 1 && !Character.isDigit(s.charAt(0))) {
@@ -514,9 +515,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/explore/interview/card/top-interview-questions-easy/127/strings/885/">strStr</a>
+     * <a href="{@link LeetCode#LC_150}127/strings/885/">strStr</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + LC_150 + "127/strings/885/")
     public static int strStr(String haystack, String needle) {
         if (haystack.contains(needle)) {
             return haystack.indexOf(needle);
@@ -525,9 +526,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/explore/interview/card/top-interview-questions-easy/127/strings/885/">strStr1</a>
+     * <a href="{@link LeetCode#LC_150}127/strings/885/">strStr1</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + LC_150 + "127/strings/885/")
     public static int strStr1(String haystack, String needle) {
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < haystack.length() - needle.length() + 1; i++) {
@@ -544,9 +545,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/explore/interview/card/top-interview-questions-easy/127/strings/887/">longestCommonPart</a>
+     * <a href="{@link LeetCode#LC_150}127/strings/887/">longestCommonPart</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + LC_150 + "127/strings/887/")
     public static String longestCommonPart(String[] strs) {
         int length = strs[0].length();
         while (length != 0) {
@@ -568,9 +569,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/problems/longest-common-prefix/">longestCommonPrefix</a>
+     * <a href="{@link LeetCode#LEET_CODE_LINK}longest-common-prefix/">longestCommonPrefix</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + "longest-common-prefix")
     public static String longestCommonPrefix(String[] strs) {
         int length = strs[0].length();
         while (length != 0) {
@@ -592,9 +593,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/problems/longest-common-prefix/">longestCommonPrefix1</a>
+     * <a href="{@link LeetCode#LEET_CODE_LINK}longest-common-prefix/">longestCommonPrefix1</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + "longest-common-prefix")
     public static String longestCommonPrefix1(String[] strs) {
         if (strs[0].isEmpty()) {
             return "";
@@ -615,9 +616,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/problems/merge-sorted-array/">merge</a>
+     * <a href="{@link LeetCode#LEET_CODE_LINK}merge-sorted-array/">merge</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + "merge-sorted-array")
     public static void merge(int[] nums1, int m, int[] nums2, int n) {
         for (int i = 0; i < nums2.length; i++) {
             nums1[nums1.length - i - 1] = nums2[nums2.length - i - 1];
@@ -634,9 +635,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/problems/remove-element/">removeElement</a>
+     * <a href="{@link LeetCode#LEET_CODE_LINK}remove-element/">removeElement</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + "remove-element/")
     public static int removeElement(int[] nums, int val) {
         int counter = 0;
         for (int i = 0; i < nums.length; i++) {
@@ -649,9 +650,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/">removeDuplicates</a>
+     * <a href="{@link LeetCode#LEET_CODE_LINK}remove-duplicates-from-sorted-array/">removeDuplicates</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + "remove-duplicates-from-sorted-array/")
     public static int removeDuplicates(int[] nums) {
         int length = nums.length;
         int maxValue = nums[length - 1];
@@ -675,9 +676,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/">removeDuplicates1</a>
+     * <a href="{@link LeetCode#LEET_CODE_LINK}remove-duplicates-from-sorted-array/">removeDuplicates1</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + "remove-duplicates-from-sorted-array/")
     public static int removeDuplicates1(int[] nums) {
         Set<Integer> unique = new LinkedHashSet<>();
         for (int num : nums) {
@@ -692,9 +693,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/">removeDuplicates2</a>
+     * <a href="{@link LeetCode#LEET_CODE_LINK}remove-duplicates-from-sorted-array/">removeDuplicates2</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + "remove-duplicates-from-sorted-array/")
     public static int removeDuplicates2(int[] nums) {
         int previousPointer = 0;
         int currentPointer = 1;
@@ -709,9 +710,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/">removeDuplicates3</a>
+     * <a href="{@link LeetCode#LEET_CODE_LINK}remove-duplicates-from-sorted-array-ii/">removeDuplicates3</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + "remove-duplicates-from-sorted-array-ii/")
     public static int removeDuplicates3(int[] nums) {
         int j = 1;
         for (int i = 1; i < nums.length; i++) {
@@ -724,9 +725,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/">removeDuplicates4</a>
+     * <a href="{@link LeetCode#LEET_CODE_LINK}remove-duplicates-from-sorted-array-ii/">removeDuplicates4</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + "")
     public static int removeDuplicates4(int[] nums) {
         int j = 1;
         for (int i = 1; i < nums.length; i++) {
@@ -739,9 +740,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/">removeDuplicates5</a>
+     * <a href="{@link LeetCode#LEET_CODE_LINK}remove-all-adjacent-duplicates-in-string/">removeDuplicates5</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + "remove-all-adjacent-duplicates-in-string/")
     public static String removeDuplicates5(String s) {
         StringBuilder sb = new StringBuilder();
         for (char c : s.toCharArray()) {
@@ -756,9 +757,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/problems/string-compression/">compress</a>
+     * <a href="{@link LeetCode#LEET_CODE_LINK}string-compression/">compress</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + "string-compression/")
     public static int compress(char[] chars) {
         Map<Character, Integer> linkedHashMap = new LinkedHashMap<>();
         for (char aChar : chars) {
@@ -793,9 +794,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/problems/ugly-number/">isUgly</a>
+     * <a href="{@link LeetCode#LEET_CODE_LINK}ugly-number/">isUgly</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + "ugly-number/")
     public static boolean isUgly(int n) {
         if (n <= 0) {
             return false;
@@ -813,18 +814,18 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/problems/length-of-last-word/">lengthOfLastWord</a>
+     * <a href="{@link LeetCode#LEET_CODE_LINK}length-of-last-word/">lengthOfLastWord</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + "length-of-last-word/")
     public static int lengthOfLastWord(String s) {
         String[] array = s.split("\\s");
         return array[array.length - 1].length();
     }
 
     /**
-     * <a href="https://leetcode.com/problems/valid-parentheses/">isValid</a>
+     * <a href="{@link LeetCode#LEET_CODE_LINK}valid-parentheses/">isValid</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + "valid-parentheses/")
     public static boolean isValid(String s) {
         Stack<Character> stack = new Stack<>();
         Map<Character, Character> map = Map.of(
@@ -848,7 +849,7 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/problems/is-subsequence/">isSubsequence</a>
+     * <a href="{@link LeetCode#LEET_CODE_LINK}is-subsequence/">isSubsequence</a>
      */
     public static boolean isSubsequence(String s, String t) {
         int sp = 0, tp = 0;
@@ -862,9 +863,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/problems/ransom-note/">canConstruct</a>
+     * <a href="{@link LeetCode#LEET_CODE_LINK}ransom-note/">canConstruct</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + "ransom-note/")
     public static boolean canConstruct(String ransomNote, String magazine) {
         Map<Character, Integer> magazineMap = new HashMap<>();
         for (char c : magazine.toCharArray()) {
@@ -893,9 +894,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/problems/isomorphic-strings/">isIsomorphic</a>
+     * <a href="{@link LeetCode#LEET_CODE_LINK}isomorphic-strings/">isIsomorphic</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + "isomorphic-strings/")
     public static boolean isIsomorphic(String s, String t) {
         Map<Character, Integer> mapS = new LinkedHashMap<>();
         Map<Character, Integer> mapT = new LinkedHashMap<>();
@@ -923,9 +924,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/problems/word-pattern/">wordPattern</a>
+     * <a href="{@link LeetCode#LEET_CODE_LINK}word-pattern/">wordPattern</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + "word-pattern/")
     public static boolean wordPattern(String pattern, String s) {
         Map<Character, Integer> mapPattern = new LinkedHashMap<>();
         Map<String, Integer> mapS = new LinkedHashMap<>();
@@ -957,9 +958,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/problems/summary-ranges/">summaryRanges</a>
+     * <a href="{@link LeetCode#LEET_CODE_LINK}summary-ranges/">summaryRanges</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + "summary-ranges/")
     public static List<String> summaryRanges(int[] nums) {
         List<String> answer = new ArrayList<>();
         if (nums.length == 0) {
@@ -987,9 +988,9 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/problems/contains-duplicate-ii">containsNearbyDuplicate</a>
+     * <a href="{@link LeetCode#LEET_CODE_LINK}contains-duplicate-ii">containsNearbyDuplicate</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LEET_CODE_LINK + "contains-duplicate-ii")
     public static boolean containsNearbyDuplicate(int[] nums, int k) {
         for (int i = 0; i < nums.length; i++) {
             for (int j = i; j < nums.length; j++) {
@@ -1002,7 +1003,7 @@ public class LeetCode {
     }
 
     /**
-     * <a href="https://leetcode.com/problems/contains-duplicate-ii">containsNearbyDuplicate1</a>
+     * <a href="{@link LeetCode#LEET_CODE_LINK}contains-duplicate-ii">containsNearbyDuplicate1</a>
      */
     @RecordMethodInfo(link = LEET_CODE_LINK + "contains-duplicate-ii/")
     public static boolean containsNearbyDuplicate1(int[] nums, int k) {

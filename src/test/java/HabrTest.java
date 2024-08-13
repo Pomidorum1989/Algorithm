@@ -1,11 +1,14 @@
+import org.junit.jupiter.api.Test;
+
 import static org.dorum.algo.Habr.closestNumber;
 import static org.dorum.algo.Habr.closestNumber1;
 
 public class HabrTest {
-    public static void main(String[] args) {
+
+    @Test
+    public void closestNumberTest() {
         int[] array = new int[]{3, 4, 6, 9, 10, 12, 14, 15, 17, 19, 21};
         int[] array1 = new int[]{};
-
         System.out.print(closestNumber(12, array) + "  ");
         System.out.print(closestNumber(13, array) + "  ");
         System.out.print(closestNumber(2, array) + "  ");

@@ -9,7 +9,8 @@ import java.util.List;
 import java.util.Map;
 
 public class MapToFileAppender {
-    private static final String REPO_LINK = "https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/";
+    private static final String REPO_LINK =
+            "https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/";
 
     @AllArgsConstructor
     @Getter

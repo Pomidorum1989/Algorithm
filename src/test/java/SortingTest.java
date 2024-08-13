@@ -1,20 +1,35 @@
+import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
 import java.util.Random;
 
+import static org.dorum.algo.Sorting.bubbleSort;
 import static org.dorum.algo.Sorting.mergeSort;
 
 public class SortingTest {
-    public static void main(String[] args) {
-        int[] inputArray = new int[100000];
+    private final static int[] INPUT_ARRAY;
+
+    static {
+        INPUT_ARRAY = new int[100000];
         Random random = new Random();
-        for (int i = 0; i < inputArray.length; i++) {
-            inputArray[i] = random.nextInt(100);
+        for (int i = 0; i < INPUT_ARRAY.length; i++) {
+            INPUT_ARRAY[i] = random.nextInt(100);
         }
-//        System.out.println("Input:" + Arrays.toString(inputArray));
-//        bubbleSort(inputArray);
+    }
+
+    @Test
+    public void mergeSortTest() {
         long start = System.currentTimeMillis();
-        mergeSort(inputArray);
+        mergeSort(INPUT_ARRAY);
         long end = System.currentTimeMillis();
         System.out.println((end - start) / 1000);
-//        System.out.println("Output:" + Arrays.toString(inputArray));
+
+    }
+
+    @Test
+    public void bubbleSortTest() {
+        System.out.println("Input:" + Arrays.toString(INPUT_ARRAY));
+        bubbleSort(INPUT_ARRAY);
+        System.out.println("Output:" + Arrays.toString(INPUT_ARRAY));
     }
 }

@@ -72,6 +72,7 @@ public class Codility {
         System.out.println("Minimum value : " + array[minimumValueIndex]);
     }
 
+    @RecordMethodInfo()
     public static void bubbleSort(int[] array) {
         int actionCounter = 0;
         System.out.println("Input array: " + Arrays.toString(array));

@@ -1,41 +1,71 @@
 import org.dorum.algo.Trees;
 
+import org.dorum.algo.Trees.TreeNode;
+import org.junit.jupiter.api.Test;
+
+import static org.dorum.algo.Trees.*;
+
 public class TreesTest {
-    public static void main(String[] args) {
-//        TreeNode node20 = new TreeNode(20);
-//        node20.left = new TreeNode(15);
-//        node20.right = new TreeNode(7);
 
-//        TreeNode rootNode3 = new TreeNode(3);
-//        rootNode3.left = new TreeNode(9);
-//        rootNode3.right = node20;
+    private static final TreeNode ROOT_NODE_3;
+    private static final TreeNode NODE_1;
+    private static final TreeNode NODE_3;
+    private static final TreeNode NODE_4;
+    private static final TreeNode NODE_5;
+    private static final TreeNode NODE_9;
+    private static final TreeNode NODE_11;
+    private static final TreeNode NODE_15;
+    private static final TreeNode NODE_20;
 
-//        TreeNode node1 = new TreeNode(2);
-//        node1.left = new TreeNode(1);
-//        node1.right = new TreeNode(3);
+    static {
+        NODE_20 = new Trees.TreeNode(20);
+        NODE_20.left = new TreeNode(15);
+        NODE_20.right = new TreeNode(7);
 
-//        System.out.println(maxSum(node1));
+        ROOT_NODE_3 = new TreeNode(3);
+        ROOT_NODE_3.left = new TreeNode(9);
+        ROOT_NODE_3.right = NODE_20;
 
-//        TreeNode node4 = new TreeNode(4);
-//        node4.left = new TreeNode(3);
-//        node4.right = new TreeNode(6);
-//        TreeNode node5 = new TreeNode(5);
-//        node5.left = new TreeNode(1);;
-//        node5.right = node4;
+        NODE_1 = new TreeNode(2);
+        NODE_1.left = new TreeNode(1);
+        NODE_1.right = new TreeNode(3);
 
-        Trees.TreeNode node3 = new Trees.TreeNode(3);
-        node3.left = new Trees.TreeNode(1);
-        node3.right = new Trees.TreeNode(5);
-        Trees.TreeNode node9 = new Trees.TreeNode(9);
-        node9.left = node3;
-        Trees.TreeNode node15 = new Trees.TreeNode(15);
-        node15.right = new Trees.TreeNode(17);
-        Trees.TreeNode node11 = new Trees.TreeNode(11);
-        node11.left = node9;
-        node11.right = node15;
+        NODE_4 = new TreeNode(4);
+        NODE_4.left = new TreeNode(3);
+        NODE_4.right = new TreeNode(6);
 
-//        System.out.println(isValidBST(node11));
-//        System.out.println(isValidBSTInorderTraversal(node11));
-//        System.out.println(isValidBST(node5));
+        NODE_5 = new TreeNode(5);
+        NODE_5.left = new TreeNode(1);
+        NODE_5.right = NODE_4;
+
+        NODE_3 = new TreeNode(3);
+        NODE_3.left = new TreeNode(1);
+        NODE_3.right = new TreeNode(5);
+
+        NODE_9 = new TreeNode(9);
+        NODE_9.left = NODE_3;
+
+        NODE_15 = new TreeNode(15);
+        NODE_15.right = new TreeNode(17);
+
+        NODE_11 = new TreeNode(11);
+        NODE_11.left = NODE_9;
+        NODE_11.right = NODE_15;
+    }
+
+    @Test
+    public void maxSumTest() {
+        System.out.println(maxSum(NODE_1));
+    }
+
+    @Test
+    public void isValidBSTTest() {
+        System.out.println(isValidBST(NODE_11));
+        System.out.println(isValidBST(NODE_5));
+    }
+
+    @Test
+    public void isValidBSTInorderTraversalTest() {
+        System.out.println(isValidBSTInorderTraversal(NODE_11));
     }
 }

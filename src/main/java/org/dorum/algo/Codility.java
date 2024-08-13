@@ -1,52 +1,16 @@
 package org.dorum.algo;
 
+import org.dorum.utils.RecordMethodInfo;
+
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
 public class Codility {
 
-    public static void main(String[] args) {
+    private static final String CODILITY_LINK = "https://app.codility.com/programmers/lessons/";
 
-        System.out.println(passingCars(new int[]{0, 1, 0, 1, 1}));
-        System.out.println(passingCars1(new int[]{0, 1, 0, 1, 1}));
-
-        System.out.println(missingInteger(new int[]{1, 2, 3}));
-        System.out.println(missingInteger(new int[]{1, 3, 6, 4, 1, 2}));
-
-        System.out.println(frogRiverOne(5, new int[]{1, 3, 1, 4, 2, 3, 5, 4}));
-
-        System.out.println("Amount of jumps: " + frogJump(10, 85, 30));
-
-        System.out.println(binaryGap(9));
-        System.out.println(binaryGap(15));
-        System.out.println(binaryGap(1041));
-        System.out.println(binaryGap(32));
-
-        System.out.println(findExtraElement(new int[]{9, 3, 9, 3, 9, 7, 9}));
-        System.out.println(findExtraElement(new int[]{2, 2, 3, 3, 4}));
-        System.out.println(findExtraElement(new int[]{3, 3, 8, 8, 8, 8, 3}));
-        System.out.println(findExtraElement(new int[]{2, 3, 1, 5}));
-
-        String text = "abcdcba", text1 = "abcdcbc", text2 = "abccba", text3 = "abccbc";
-        System.out.println("Is palindrome: " + palindromeCheck(text));
-        System.out.println("Is palindrome: " + palindromeCheck(text1));
-        System.out.println("Is palindrome: " + palindromeCheck1(text));
-        System.out.println("Is palindrome: " + palindromeCheck1(text1));
-        System.out.println("Is palindrome: " + palindromeCheck2(text));
-        System.out.println("Is palindrome: " + palindromeCheck2(text1));
-        System.out.println("Is palindrome: " + palindromeCheck2(text2));
-        System.out.println("Is palindrome: " + palindromeCheck2(text3));
-        System.out.println("Is palindrome: " + palindromeCheck3(text, 0));
-        System.out.println("Is palindrome: " + palindromeCheck3(text3, 0));
-
-        int[] array = new int[]{8, 5, 6, 7, 4, 5, 3, 1};
-        findMinimumValueIndex(array);
-
-        int[] array1 = new int[]{8, 5, 6, 7, 4, 5, 3, 1};
-        bubbleSort(array1);
-    }
-
+    @RecordMethodInfo()
     public static boolean palindromeCheck(String text) {
         StringBuilder reversedString = new StringBuilder();
         for (int i = 0; i < text.length(); i++) {
@@ -55,11 +19,13 @@ public class Codility {
         return reversedString.toString().equals(text);
     }
 
+    @RecordMethodInfo()
     public static boolean palindromeCheck1(String text) {
         StringBuilder reversedString = new StringBuilder(text).reverse();
         return reversedString.toString().equals(text);
     }
 
+    @RecordMethodInfo()
     public static boolean palindromeCheck2(String text) {
         int left = 0;
         int right = text.length() - 1;
@@ -79,6 +45,7 @@ public class Codility {
         return true;
     }
 
+    @RecordMethodInfo()
     public static boolean palindromeCheck3(String text, int indexStart) {
         System.out.println(text);
         int indexEnd = text.length() - 1 - indexStart;
@@ -90,6 +57,7 @@ public class Codility {
         }
     }
 
+    @RecordMethodInfo()
     public static void findMinimumValueIndex(int[] array) {
         int minimumValueIndex = 0;
         for (int k : array) {
@@ -121,7 +89,10 @@ public class Codility {
         System.out.println("Sorted array: " + Arrays.toString(array));
     }
 
-    //https://app.codility.com/programmers/lessons/1-iterations/
+    /**
+     * <a href="{@link Codility#CODILITY_LINK}1-iterations/">binaryGap</a>
+     */
+    @RecordMethodInfo(link = CODILITY_LINK + "1-iterations/")
     public static int binaryGap(int n) {
         System.out.println("Input: " + n);
         if (n % 2 == 0) {
@@ -141,7 +112,10 @@ public class Codility {
         return temp;
     }
 
-    //https://app.codility.com/programmers/lessons/2-arrays/
+    /**
+     * <a href="{@link Codility#CODILITY_LINK}2-arrays/">rotateArray</a>
+     */
+    @RecordMethodInfo(link = CODILITY_LINK + "2-arrays/")
     public static int[] rotateArray(int[] A, int K) {
         System.out.println("Input array: " + Arrays.toString(A));
         System.out.println("Input: " + K);
@@ -159,7 +133,10 @@ public class Codility {
         return A;
     }
 
-    //https://app.codility.com/programmers/lessons/2-arrays/
+    /**
+     * <a href="{@link Codility#CODILITY_LINK}2-arrays/">rotateArray</a>
+     */
+    @RecordMethodInfo(link = CODILITY_LINK + "2-arrays/")
     public static int findExtraElement(int[] A) {
         System.out.println("Input array: " + Arrays.toString(A));
         HashSet<Integer> result = new HashSet<>();
@@ -173,13 +150,15 @@ public class Codility {
         return result.iterator().next();
     }
 
-    //https://app.codility.com/programmers/lessons/3-time_complexity/
+    /**
+     * <a href="{@link Codility#CODILITY_LINK}3-time_complexity/">frogJump</a>
+     */
+    @RecordMethodInfo(link = CODILITY_LINK + "3-time_complexity")
     public static int frogJump(int start, int end, int jump) {
         int distance = end - start;
         if (distance <= 0) {
             return 0;
         }
-
         if (distance % jump == 0) {
             return distance / jump;
         } else {
@@ -188,7 +167,10 @@ public class Codility {
         }
     }
 
-    //https://app.codility.com/programmers/lessons/3-time_complexity/
+    /**
+     * <a href="{@link Codility#CODILITY_LINK}3-time_complexity/">permMissingElem</a>
+     */
+    @RecordMethodInfo(link = CODILITY_LINK + "3-time_complexity")
     public static int permMissingElem(int[] A) {
         if (A.length == 0) {
             return 1;
@@ -204,21 +186,20 @@ public class Codility {
         return totalSum - partialSum;
     }
 
-    //https://app.codility.com/programmers/lessons/3-time_complexity/
+    /**
+     * <a href="{@link Codility#CODILITY_LINK}3-time_complexity/">tapeEquilibrium</a>
+     */
+    @RecordMethodInfo(link = CODILITY_LINK + "3-time_complexity")
     public static int tapeEquilibrium(int[] A) {
         int totalSum = 0, result = Integer.MAX_VALUE;
         for (int element : A) {
             totalSum += element;
         }
-
-        System.out.println("Total array sum: " + totalSum);
-
         int leftSum = 0;
         for (int i = 0; i < A.length - 1; i++) {
             leftSum += A[i];
             int rightSum = totalSum - leftSum;
             int diff = Math.abs(leftSum - rightSum);
-            System.out.println("|" + leftSum + " - " + rightSum + "| = " + diff);
             if (diff < result) {
                 result = diff;
             }
@@ -226,7 +207,10 @@ public class Codility {
         return result;
     }
 
-    //https://app.codility.com/programmers/lessons/4-counting_elements/
+    /**
+     * <a href="{@link Codility#CODILITY_LINK}4-counting_elements/">frogRiverOne</a>
+     */
+    @RecordMethodInfo(link = CODILITY_LINK + "4-counting_elements/")
     public static int frogRiverOne(int X, int[] A) {
         Set<Integer> steps = new HashSet<>();
         for (int i = 1; i <= X; i++) {
@@ -243,8 +227,9 @@ public class Codility {
     }
 
     /**
-     * <a href="https://app.codility.com/programmers/lessons/4-counting_elements/">...</a>
+     * <a href="{@link Codility#CODILITY_LINK}4-counting_elements/">permCheck</a>
      */
+    @RecordMethodInfo(link = CODILITY_LINK + "4-counting_elements/")
     public static int permCheck(int[] A) {
         int expectedSum = (A.length * (A.length + 1)) / 2;
         int currentSum = 0;
@@ -255,8 +240,9 @@ public class Codility {
     }
 
     /**
-     * <a href="https://app.codility.com/programmers/lessons/4-counting_elements/">...</a>
+     * <a href="{@link Codility#CODILITY_LINK}4-counting_elements/">permCheck1</a>
      */
+    @RecordMethodInfo(link = CODILITY_LINK + "4-counting_elements/")
     public static int permCheck1(int[] A) {
         Set<Integer> set = new HashSet<>();
         for (int i = 1; i <= A.length; i++) {
@@ -273,8 +259,9 @@ public class Codility {
     }
 
     /**
-     * <a href="https://app.codility.com/programmers/lessons/4-counting_elements/">...</a>
+     * <a href="{@link Codility#CODILITY_LINK}4-counting_elements/">missingInteger</a>
      */
+    @RecordMethodInfo(link = CODILITY_LINK + "4-counting_elements/")
     public static int missingInteger(int[] A) {
         Set<Integer> set = new HashSet<>();
         for (int i = 1; i <= A.length + 1; i++) {
@@ -282,27 +269,26 @@ public class Codility {
         }
         System.out.println("Set before: " + set);
         for (int j : A) {
-            set.remove(new Integer(j));
+            set.remove(j);
         }
         System.out.println("Set after: " + set);
         return set.iterator().next();
     }
 
     /**
-     * <a href="https://app.codility.com/programmers/lessons/5-prefix_sums/">...</a>
+     * <a href="{@link Codility#CODILITY_LINK}5-prefix_sums/">passingCars</a>
      */
+    @RecordMethodInfo(link = CODILITY_LINK + "5-prefix_sum/")
     public static int passingCars(int[] A) {
         System.out.println("Input array:" + Arrays.toString(A));
         int carsTravellingEast = 0;
         long passedCars = 0;
-
         for (int j : A) {
             if (j == 0) {
                 carsTravellingEast++;
             } else {
                 passedCars += carsTravellingEast;
             }
-
             if (passedCars > 1000000) {
                 return -1;
             }
@@ -311,8 +297,9 @@ public class Codility {
     }
 
     /**
-     * <a href="https://app.codility.com/programmers/lessons/5-prefix_sums/">...</a>
+     * <a href="{@link Codility#CODILITY_LINK}5-prefix_sums/">passingCars1</a>
      */
+    @RecordMethodInfo(link = CODILITY_LINK + "5-prefix_sum/")
     public static int passingCars1(int[] A) {
         System.out.println("Input array:" + Arrays.toString(A));
         int sum = 0;

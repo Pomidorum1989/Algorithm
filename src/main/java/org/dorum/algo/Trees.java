@@ -1,56 +1,19 @@
 package org.dorum.algo;
 
+import org.dorum.utils.RecordMethodInfo;
+
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Trees {
-
-    public static void main(String[] args) {
-//        TreeNode node20 = new TreeNode(20);
-//        node20.left = new TreeNode(15);
-//        node20.right = new TreeNode(7);
-//
-//        TreeNode rootNode3 = new TreeNode(3);
-//        rootNode3.left = new TreeNode(9);
-//        rootNode3.right = node20;
-//
-//        TreeNode node1 = new TreeNode(2);
-//        node1.left = new TreeNode(1);
-//        node1.right = new TreeNode(3);
-//
-//        System.out.println(maxSum(node1));
-//
-//        TreeNode node4 = new TreeNode(4);
-//        node4.left = new TreeNode(3);
-//        node4.right = new TreeNode(6);
-//        TreeNode node5 = new TreeNode(5);
-//        node5.left = new TreeNode(1);;
-//        node5.right = node4;
-
-
-        TreeNode node3 = new TreeNode(3);
-        node3.left = new TreeNode(1);
-        node3.right = new TreeNode(5);
-        TreeNode node9 = new TreeNode(9);
-        node9.left = node3;
-        TreeNode node15 = new TreeNode(15);
-        node15.right = new TreeNode(17);
-        TreeNode node11 = new TreeNode(11);
-        node11.left = node9;
-        node11.right = node15;
-
-//        System.out.println(isValidBST(node11));
-//        System.out.println(isValidBSTInorderTraversal(node11));
-//        System.out.println(isValidBST(node5));
-    }
-
     public static class TreeNode {
         int val;
-        TreeNode left, right;
+        public TreeNode left;
+        public TreeNode right;
 
-        TreeNode(int val) {
+        public TreeNode(int val) {
             this.val = val;
         }
 
@@ -66,7 +29,10 @@ public class Trees {
         }
     }
 
-    //https://leetcode.com/explore/interview/card/top-interview-questions-easy/94/trees/555/
+    /**
+     * <a href="{@link LeetCode#LC_150}94/trees/555/">maxDepth</a>
+     */
+    @RecordMethodInfo()
     public static int maxDepth(TreeNode root) {
         if (root == null) {
             return 0;
@@ -76,6 +42,7 @@ public class Trees {
         return Math.max(left, right) + 1;
     }
 
+    @RecordMethodInfo()
     public static int maxSum(TreeNode root) {
         if (root == null) {
             return 0;
@@ -85,6 +52,7 @@ public class Trees {
         return root.val + left + right;
     }
 
+    @RecordMethodInfo()
     public static boolean ifValueExist(TreeNode root, int value) {
         if (root == null) {
             return false;
@@ -94,7 +62,11 @@ public class Trees {
         return root.val == value || isLeft || isRight;
     }
 
-    //https://leetcode.com/explore/interview/card/top-interview-questions-easy/94/trees/555/
+
+    /**
+     * <a href="{@link LeetCode#LC_150}94/trees/555/">maxDepthBFS</a>
+     */
+    @RecordMethodInfo()
     public static int maxDepthBFS(TreeNode root) {
         if (root == null) {
             return 0;
@@ -117,7 +89,10 @@ public class Trees {
         return level;
     }
 
-    //https://leetcode.com/explore/interview/card/top-interview-questions-easy/94/trees/625/
+    /**
+     * <a href="{@link LeetCode#LC_150}94/trees/625/">isValidBST</a>
+     */
+    @RecordMethodInfo()
     public static boolean isValidBST(TreeNode root) {
         return isNodeValid(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
@@ -132,6 +107,7 @@ public class Trees {
                 isNodeValid(root.right, root.val, right);
     }
 
+    @RecordMethodInfo()
     public static boolean isValidBSTInorderTraversal(TreeNode root) {
         List<Integer> list = new LinkedList<>();
         helper(root, list);

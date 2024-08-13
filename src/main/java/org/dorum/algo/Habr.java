@@ -1,32 +1,17 @@
 package org.dorum.algo;
 
+import org.dorum.utils.RecordMethodInfo;
+
 import java.util.Objects;
 
 public class Habr {
-    public static void main(String[] args) {
-        int[] array = new int[]{3, 4, 6, 9, 10, 12, 14, 15, 17, 19, 21};
-        int[] array1 = new int[]{};
 
-        System.out.print(closestNumber(12, array) + "  ");
-        System.out.print(closestNumber(13, array) + "  ");
-        System.out.print(closestNumber(2, array) + "  ");
-        System.out.print(closestNumber(22, array) + "  ");
-        System.out.print(closestNumber(3, array) + "  ");
-        System.out.print(closestNumber(21, array) + "  ");
-        System.out.print(closestNumber(12, array1) + "  ");
-        System.out.print(closestNumber(null, array) + "  ");
-        System.out.println();
-        System.out.print(closestNumber1(12, array) + "  ");
-        System.out.print(closestNumber1(13, array) + "  ");
-        System.out.print(closestNumber1(2, array) + "  ");
-        System.out.print(closestNumber1(22, array) + "  ");
-        System.out.print(closestNumber1(3, array) + "  ");
-        System.out.print(closestNumber1(21, array) + "  ");
-        System.out.print(closestNumber1(12, array1) + "  ");
-        System.out.print(closestNumber1(null, array) + "  ");
-    }
+    private static final String HABR_LINK = "https://habr.com/ru/companies/ispsystem/articles/";
 
-    //https://habr.com/ru/companies/ispsystem/articles/779224/
+    /**
+     * <a href="{@link Habr#HABR_LINK}779224/">closestNumber</a>
+     */
+    @RecordMethodInfo(link = HABR_LINK + "779224")
     public static int closestNumber(Integer number, int[] array) {
 //        System.out.println("Input array: " + Arrays.toString(array));
 //        System.out.println("Searching for " + number);
@@ -45,7 +30,10 @@ public class Habr {
         return -1;
     }
 
-    //https://habr.com/ru/companies/ispsystem/articles/779224/
+    /**
+     * <a href="{@link Habr#HABR_LINK}779224/">closestNumber1</a>
+     */
+    @RecordMethodInfo(link = HABR_LINK + "779224")
     public static int closestNumber1(Integer number, int[] array) {
 //        System.out.println("Input array: " + Arrays.toString(array));
 //        System.out.println("Searching for " + number);
@@ -72,6 +60,7 @@ public class Habr {
         return answer;
     }
 
+    @RecordMethodInfo
     public static String invertString(String text) {
         String temp = "";
         for (int i = text.length() - 1; i >= 0; i--) {

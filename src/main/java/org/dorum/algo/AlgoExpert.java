@@ -1,19 +1,14 @@
 package org.dorum.algo;
 
+import org.dorum.utils.RecordMethodInfo;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 public class AlgoExpert {
-    public static void main(String[] args) {
-        int[] array = new int[]{2, 1, 3, 5, 8, 6, 4};
-//        Arrays.sort(array);
-//        System.out.println(binarySearch(array, 0));
-//        System.out.println(validateSubSequence(array, new int[]{}));
-//        sumOfNUmber(array, 10);
-//        sumOfTwo(array, 10);
-    }
 
+    @RecordMethodInfo()
     public static void sumOfTwo(int[] array, int sum) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < array.length; i++) {
@@ -25,6 +20,7 @@ public class AlgoExpert {
         System.out.println(map);
     }
 
+    @RecordMethodInfo()
     public static void sumOfNUmber(int[] array, int sum) {
         for (int i = 0; i < array.length; i++) {
             for (int j = i + 1; j < array.length; j++) {
@@ -38,6 +34,7 @@ public class AlgoExpert {
         }
     }
 
+    @RecordMethodInfo()
     public static boolean validateSubSequence(int[] inputArray, int[] sequenceArray) {
         int inputPointer = 0;
         int sequencePointer = 0;
@@ -61,6 +58,7 @@ public class AlgoExpert {
         return false;
     }
 
+    @RecordMethodInfo()
     public static int binarySearch(int[] array, int target) {
         System.out.println(Arrays.toString(array));
         int leftIndex = 0;

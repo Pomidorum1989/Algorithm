@@ -1,12 +1,3 @@
-package org.dorum;
-
-import org.dorum.algo.LeetCode;
-import org.dorum.utils.MapToFileAppender;
-import org.dorum.utils.MethodInfoRecorder;
-
-import java.util.List;
-import java.util.Map;
-
 public class LeetCodeTest {
     public static void main(String[] args) {
 //        Map<String, List<String>> map = MethodInfoRecorder.recordMethodInfo(LeetCode.class);

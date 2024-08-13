@@ -1,53 +1,17 @@
 package org.dorum.algo;
 
+import org.dorum.utils.RecordMethodInfo;
+
 import java.util.HashSet;
 import java.util.Set;
 
+import static org.dorum.algo.LeetCode.LC_150;
+
 public class LinkedList {
-
-    public static void main(String[] args) {
-        Node left = newNode(1);
-        left.next = newNode(2);
-        left.next.next = newNode(2);
-        left.next.next.next = newNode(1);
-
-        Node right = newNode(1);
-        right.next = newNode(1);
-        right.next.next = newNode(2);
-        right.next.next.next = newNode(1);
-
-        Node loop = newNode(3);
-        loop.next = newNode(2);
-        loop.next.next = newNode(0);
-        loop.next.next.next = newNode(-4);
-        loop.next.next.next.next = loop.next;
-
-        System.out.println(hasCycle(loop));
-        System.out.println(hasCycle(right));
-        System.out.println(hasCycle1(loop));
-        System.out.println(hasCycle1(right));
-
-//        Node head = createLinkedList(7);
-//        Node head1 = createLinkedList(9);
-
-//        printList(left);
-//        printList(right);
-//        Node modifiedListHead = removeNthFromEnd(head, 2);
-//        deleteNode(head);
-//        Node reversedHead = reverseList(head);
-//        head = deleteMid(head);
-//        Node mergedHead = mergeTwoLists(left, right);
-//        printList(mergedHead);
-//        System.out.println(isPalindrome(left));
-//        System.out.println(isPalindrome(right));
-//        System.out.println(isPalindrome1(right));
-//        System.out.println(isPalindrome(left));
-//        System.out.println(isPalindrome1(left));
-    }
 
     public static class Node {
         int val;
-        Node next;
+        public Node next;
     }
 
     public static Node newNode(int data) {
@@ -116,7 +80,10 @@ public class LinkedList {
         System.out.println("NULL");
     }
 
-    //https://leetcode.com/explore/interview/card/top-interview-questions-easy/93/linked-list/553/
+    /**
+     * <a href="{@link LeetCode#LC_150}93/linked-list/553/">removeNthFromEnd</a>
+     */
+    @RecordMethodInfo(link = LC_150 + "93/linked-list/553/")
     public static void deleteNode(Node node) {
         if (node.next != null) {
             node.val = node.next.val;
@@ -124,7 +91,10 @@ public class LinkedList {
         }
     }
 
-    //https://leetcode.com/explore/interview/card/top-interview-questions-easy/93/linked-list/603/
+    /**
+     * <a href="{@link LeetCode#LC_150}93/linked-list/603/">removeNthFromEnd</a>
+     */
+    @RecordMethodInfo(link = LC_150 + "93/linked-list/603/")
     public static Node removeNthFromEnd(Node head, int n) {
         int counter = 0, length = countOfNodes(head);
         if (length == 1) {
@@ -147,7 +117,10 @@ public class LinkedList {
         return currentNode;
     }
 
-    //https://leetcode.com/explore/interview/card/top-interview-questions-easy/93/linked-list/560/
+    /**
+     * <a href="{@link LeetCode#LC_150}93/linked-list/560/">reverseList</a>
+     */
+    @RecordMethodInfo(link = LC_150 + "93/linked-list/560/")
     public static Node reverseList(Node head) {
         Node previousNode = null, currentNode = head;
         while (currentNode != null) {
@@ -159,7 +132,10 @@ public class LinkedList {
         return previousNode;
     }
 
-    //https://leetcode.com/explore/interview/card/top-interview-questions-easy/93/linked-list/771/
+    /**
+     * <a href="{@link LeetCode#LC_150}93/linked-list/771/">mergeTwoLists</a>
+     */
+    @RecordMethodInfo(link = LC_150 + "93/linked-list/771/")
     public static Node mergeTwoLists(Node head1, Node head2) {
         Node result = new Node();
         Node currentResult = result;
@@ -177,7 +153,10 @@ public class LinkedList {
         return result.next;
     }
 
-    //https://leetcode.com/explore/interview/card/top-interview-questions-easy/93/linked-list/771/
+    /**
+     * <a href="{@link LeetCode#LC_150}93/linked-list/771/">mergeTwoListsRecursive</a>
+     */
+    @RecordMethodInfo(link = LC_150 + "93/linked-list/771/")
     public Node mergeTwoListsRecursive(Node list1, Node list2) {
         if (list1 != null && list2 != null) {
             if (list1.val < list2.val) {
@@ -193,7 +172,10 @@ public class LinkedList {
         return list1;
     }
 
-    //https://leetcode.com/explore/interview/card/top-interview-questions-easy/93/linked-list/772/
+    /**
+     * <a href="{@link LeetCode#LC_150}93/linked-list/772/">isPalindrome</a>
+     */
+    @RecordMethodInfo(link = LC_150 + "93/linked-list/772/")
     public static boolean isPalindrome(Node head) {
         Node reversedNode = null;
         Node originalNode = head;
@@ -213,7 +195,10 @@ public class LinkedList {
         return true;
     }
 
-    //https://leetcode.com/explore/interview/card/top-interview-questions-easy/93/linked-list/772/
+    /**
+     * <a href="{@link LeetCode#LC_150}93/linked-list/772/">isPalindrome1</a>
+     */
+    @RecordMethodInfo(link = LC_150 + "93/linked-list/772/")
     public static boolean isPalindrome1(Node head) {
         Node slowPointer = head, fastPointer = head;
         while (fastPointer != null) {
@@ -232,7 +217,10 @@ public class LinkedList {
     }
 
 
-    //https://leetcode.com/explore/interview/card/top-interview-questions-easy/93/linked-list/773/
+    /**
+     * <a href="{@link LeetCode#LC_150}93/linked-list/773/">hasCycle</a>
+     */
+    @RecordMethodInfo(link = LC_150 + "93/linked-list/773/")
     public static boolean hasCycle(Node head) {
         Set<Node> set = new HashSet<>();
         while (head != null) {
@@ -246,7 +234,10 @@ public class LinkedList {
         return false;
     }
 
-    //https://leetcode.com/explore/interview/card/top-interview-questions-easy/93/linked-list/773/
+    /**
+     * <a href="{@link LeetCode#LC_150}93/linked-list/773/">hasCycle1</a>
+     */
+    @RecordMethodInfo(link = LC_150 + "93/linked-list/773/")
     public static boolean hasCycle1(Node head) {
         Node slowPointer = head, fastPointer = head;
         while (fastPointer != null && fastPointer.next != null) {

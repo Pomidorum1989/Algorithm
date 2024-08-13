@@ -8,8 +8,8 @@ import java.util.*;
 public class LeetCode {
 
     private static final String LEET_CODE_LINK = "https://leetcode.com/";
-    private static final String LEET_CODE_PROBLEM = LEET_CODE_LINK + "problems/";
-    private static final String LC_150 = LEET_CODE_LINK + "explore/interview/card/top-interview-questions-easy/";
+    public static final String LEET_CODE_PROBLEM = LEET_CODE_LINK + "problems/";
+    public static final String LC_150 = LEET_CODE_LINK + "explore/interview/card/top-interview-questions-easy/";
 
     /**
      * <a href="{@link LeetCode#LC_150}92/array/564/">maxProfit</a>

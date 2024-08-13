@@ -1,93 +1,17 @@
 package org.dorum.algo;
 
+import org.dorum.utils.RecordMethodInfo;
+
 import java.text.DecimalFormat;
 import java.util.*;
 
 public class HackerRank {
+    private static final String HACKER_RANK_LINK = "https://www.hackerrank.com/challenges/";
 
-    public static void main(String[] args) {
-
-        SinglyLinkedList llist = new SinglyLinkedList();
-        llist.insertNode(16);
-        llist.insertNode(13);
-        llist.insertNode(7);
-        printList(llist.head);
-        printList(insertNodeAtPosition(llist.head, 1, 2));
-
-//        printList(reverse(llist.head));
-
-//        System.out.println(superDigit("9875", 4));
-//        System.out.println(superDigit("123", 3));
-
-//        System.out.println(counterGame(1073741824));
-//        System.out.println(counterGame1(1073741824));
-//
-//        System.out.println(balancedSums(new ArrayList<>(List.of(1))));
-//        System.out.println(balancedSums(new ArrayList<>(Arrays.asList(1, 2, 3))));
-//        System.out.println(balancedSums(new ArrayList<>(Arrays.asList(1, 2, 3, 3))));
-//        System.out.println(balancedSums1(new ArrayList<>(Arrays.asList(1, 2, 3, 3))));
-//        System.out.println(balancedSums(new ArrayList<>(Arrays.asList(2, 0, 0, 0))));
-//
-//        System.out.println(gridChallenge(new ArrayList<>(Arrays.asList("kc", "iu"))));
-//        System.out.println(gridChallenge(new ArrayList<>(Arrays.asList("uxf", "vof", "hmp"))));
-//        System.out.println(gridChallenge(new ArrayList<>(Arrays.asList("abc", "lmp", "qrt"))));
-//        System.out.println(gridChallenge(new ArrayList<>(Arrays.asList("ebacd", "fghij", "olmkn", "trpqs", "xywuv"))));
-
-//        System.out.println(maxMin(2, new ArrayList<>(Arrays.asList(1, 4, 7, 2))));
-//        System.out.println(maxMin(4, new ArrayList<>(Arrays.asList(1, 2, 3, 4, 10, 20, 30, 40, 100, 200))));
-
-//        System.out.println(caesarCipher("abcdefghijklmnopqrstuvwxyz", 3));
-
-//        findZigZagSequence(new int[]{1, 2, 3, 4, 5, 6, 7});
-
-//        System.out.println(sockMerchant(9, new ArrayList<>(Arrays.asList(10, 20, 20, 10, 10, 30, 50, 10, 20))));
-//        System.out.println(sockMerchant(7, new ArrayList<>(Arrays.asList(1, 2, 1, 2, 1, 3, 2))));
-
-//        System.out.println(lexicographicalCounter("amazon", 3));
-
-//        xor();
-
-//        System.out.println(countingSort(Arrays.asList(1, 1, 3, 2, 1)));
-
-//        System.out.println(twoArrays(1, Arrays.asList(0, 1), Arrays.asList(0, 2)));
-
-//        System.out.println(flippingBits(9));
-
-//        plusMinus(new ArrayList<>(Arrays.asList(1, 1, 0, -1, -1)));
-//        miniMaxSum(new ArrayList<>(Arrays.asList(256741038, 623958417, 467905213, 714532089, 938071625)));
-//        System.out.println(timeConversion("07:05:45PM"));
-//        System.out.println(timeConversion("07:05:45AM"));
-//        System.out.println(timeConversion("12:05:45PM"));
-//        System.out.println(timeConversion("12:05:45AM"));
-
-//        System.out.println(matchingStrings(Arrays.asList("ab", "ab", "abc"), Arrays.asList("ab", "abc", "bc")));
-
-//        System.out.println(lonelyinteger(new ArrayList<>(Arrays.asList(1, 1, 2, 3, 2, 4, 4))));
-//        System.out.println(lonelyinteger(new ArrayList<>(Arrays.asList(0, 0, 1, 2, 1))));
-
-//        System.out.println(diagonalDifference(Arrays.asList(Arrays.asList(1, 2, 3), Arrays.asList(4, 5, 6),
-//                Arrays.asList(9, 8, 9))));
-
-//        System.out.println(pangrams("We promptly judged antique ivory buckles for the next prize"));
-//        System.out.println(pangrams("We promptly judged"));
-
-//        System.out.println(birthday(new ArrayList<>(Arrays.asList(2, 2, 1, 3, 2)), 4, 2));
-//        System.out.println(birthday(new ArrayList<>(List.of(4)), 4, 1));
-//        System.out.println(birthday(new ArrayList<>(Arrays.asList(2, 5, 1, 3, 4, 4, 3, 5, 1, 1, 2, 1, 4, 1, 3, 3, 4, 2, 1)),
-//                18, 7));
-
-//        staircaseReverted(4);
-//        staircase(4);
-
-//        miniMaxSum2(Arrays.asList(256741038, 623958417, 467905213, 714532089, 938071625));
-
-//        System.out.println(isFibonacci(new int[]{1, 2, 3, 5, 8, 13, 21, 34, 55}));
-//        createFibonacciSequence(10);
-
-//        fibonacciRecursion(10);
-    }
-
-    //https://www.hackerrank.com/challenges/one-month-preparation-kit-plus-minus/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=one-month-preparation-kit&playlist_slugs%5B%5D=one-month-week-one
+    /**
+     * <a href="{@link ">plusMinus</a>
+     */
+    @RecordMethodInfo()
     public static void plusMinus(List<Integer> arr) {
         double zero = 0, positive = 0, negative = 0;
         double arrayLength = arr.size();
@@ -107,6 +31,7 @@ public class HackerRank {
         System.out.println(dec.format(zero / arrayLength));
     }
 
+    @RecordMethodInfo()
     public static void miniMaxSum(List<Integer> arr) {
         long maximumSum = Long.MIN_VALUE;
         long minimumSum = Long.MAX_VALUE;
@@ -129,6 +54,7 @@ public class HackerRank {
         System.out.println(minimumSum + " " + maximumSum);
     }
 
+    @RecordMethodInfo()
     public static String timeConversion(String s) {
         System.out.println("Input time: " + s);
         String[] array = s.replace("AM", "").replace("PM", "").split(":");
@@ -143,6 +69,7 @@ public class HackerRank {
         return s.substring(0, s.length() - 2);
     }
 
+    @RecordMethodInfo()
     public static List<Integer> matchingStrings(List<String> strings, List<String> queries) {
         int counter = 0;
         List<Integer> result = new ArrayList<>();
@@ -158,6 +85,7 @@ public class HackerRank {
         return result;
     }
 
+    @RecordMethodInfo()
     public static int lonelyInteger(List<Integer> a) {
         System.out.println("Input array: " + a);
         Collections.sort(a);
@@ -207,7 +135,7 @@ public class HackerRank {
         return result;
     }
 
-
+    @RecordMethodInfo()
     public static int diagonalDifference(List<List<Integer>> arr) {
         int counter = 0, left = 0, right = 0;
         for (List<Integer> row : arr) {
@@ -218,6 +146,7 @@ public class HackerRank {
         return Math.abs(left - right);
     }
 
+    @RecordMethodInfo()
     public static String pangrams(String s) {
         List<Character> alphabet = new ArrayList<>();
         for (int i = 0; i < 122 - 97; i++) {
@@ -235,6 +164,7 @@ public class HackerRank {
         }
     }
 
+    @RecordMethodInfo()
     public static int birthday(List<Integer> array, int sumOfWindow, int windowSize) {
         int tempSum = 0, counter = 0;
         for (int i = 0; i <= array.size() - windowSize; i++) {
@@ -249,6 +179,7 @@ public class HackerRank {
         return counter;
     }
 
+    @RecordMethodInfo()
     public static void staircaseReverted(int n) {
         for (int i = 0; i < n; i++) {
             for (int j = n - i; j > 0; j--) {
@@ -258,6 +189,7 @@ public class HackerRank {
         }
     }
 
+    @RecordMethodInfo()
     public static void staircase(int n) {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n - i - 1; j++) {
@@ -270,6 +202,7 @@ public class HackerRank {
         }
     }
 
+    @RecordMethodInfo()
     public static void miniMaxSum2(List<Integer> arr) {
         long maxSum = Long.MIN_VALUE;
         long minSum = Long.MAX_VALUE;
@@ -289,6 +222,7 @@ public class HackerRank {
         System.out.println(minSum + " " + maxSum);
     }
 
+    @RecordMethodInfo()
     public static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
         int aliceCounter = 0, bobCounter = 0;
         for (int i = 0; i < a.size(); i++) {
@@ -301,6 +235,7 @@ public class HackerRank {
         return Arrays.asList(aliceCounter, bobCounter);
     }
 
+    @RecordMethodInfo()
     public static boolean isFibonacci(int[] arr) {
         for (int i = arr.length - 1; i > 1; i--) {
             if (arr[i] != arr[i - 1] + arr[i - 2]) {
@@ -327,6 +262,7 @@ public class HackerRank {
 
     private static int n1 = 1, n2 = 2;
 
+    @RecordMethodInfo()
     public static void fibonacciRecursion(int counter) {
         int n3 = n1 + n2;
         System.out.print("-");
@@ -339,6 +275,7 @@ public class HackerRank {
         }
     }
 
+    @RecordMethodInfo()
     public static List<Integer> minimalHeaviestSetA(List<Integer> arr) {
         arr.sort(Collections.reverseOrder());
         long arrSum = arr.stream().mapToInt(Integer::intValue).sum();
@@ -363,6 +300,7 @@ public class HackerRank {
         return result;
     }
 
+    @RecordMethodInfo()
     public static String twoArrays(int k, List<Integer> A, List<Integer> B) {
         Collections.sort(A);
         B.sort(Collections.reverseOrder());
@@ -375,6 +313,7 @@ public class HackerRank {
         return "YES";
     }
 
+    @RecordMethodInfo()
     public static List<Integer> countingSort(List<Integer> arr) {
         List<Integer> result = new ArrayList<>(Collections.nCopies(100, 0));
         for (Integer integer : arr) {
@@ -392,6 +331,7 @@ public class HackerRank {
         return result;
     }
 
+    @RecordMethodInfo()
     public static void xor() {
         /* Enter your code here. Read input from STDIN. Print output to STDOUT */
         String s, t;
@@ -411,6 +351,7 @@ public class HackerRank {
         System.out.println(xor);
     }
 
+    @RecordMethodInfo()
     public static int lexicographicalCounter(String word, int substring) {
         int counter = 0;
         for (int i = 0; i < word.length() - substring + 1; i++) {
@@ -428,6 +369,7 @@ public class HackerRank {
         return counter;
     }
 
+    @RecordMethodInfo()
     public static int sockMerchant(int n, List<Integer> ar) {
         int counter = 0;
         Collections.sort(ar);
@@ -442,6 +384,7 @@ public class HackerRank {
         return counter;
     }
 
+    @RecordMethodInfo()
     public static void findZigZagSequence(int[] a) {
         int n = a.length;
         Arrays.sort(a);
@@ -475,6 +418,7 @@ public class HackerRank {
         return turn;
     }
 
+    @RecordMethodInfo()
     public static int towerBreakers(int n, int m) {
         // Write your code here
         int blocksSum = n * m;
@@ -489,6 +433,7 @@ public class HackerRank {
         return turn % 2 == 0 ? 1 : 2;
     }
 
+    @RecordMethodInfo()
     public static String caesarCipher(String s, int k) {
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
@@ -513,7 +458,7 @@ public class HackerRank {
         return result.toString();
     }
 
-
+    @RecordMethodInfo()
     public static int maxMin(int k, List<Integer> arr) {
         Collections.sort(arr);
         int unfairness = Integer.MAX_VALUE;
@@ -526,6 +471,7 @@ public class HackerRank {
         return unfairness;
     }
 
+    @RecordMethodInfo()
     public static String gridChallenge(List<String> grid) {
         for (int i = 0; i < grid.size(); i++) {
             char[] array = grid.get(i).toCharArray();
@@ -544,6 +490,7 @@ public class HackerRank {
         return "YES";
     }
 
+    @RecordMethodInfo()
     public static String balancedSums(List<Integer> arr) {
         System.out.println("Input array: " + arr);
         for (int i = 0; i < arr.size(); i++) {
@@ -568,6 +515,7 @@ public class HackerRank {
         return "NO";
     }
 
+    @RecordMethodInfo()
     public static String balancedSums1(List<Integer> arr) {
         System.out.println("Input array: " + arr);
         int totalSum = arr.stream().mapToInt(Integer::intValue).sum();
@@ -583,6 +531,7 @@ public class HackerRank {
         return "NO";
     }
 
+    @RecordMethodInfo()
     public static int flippingTheMatrix(List<List<Integer>> matrix) {
         int n = matrix.size() / 2;
         int first = Collections.max(Arrays.asList(
@@ -594,6 +543,7 @@ public class HackerRank {
         return 0;
     }
 
+    @RecordMethodInfo()
     public static String counterGame(long n) {
         System.out.println("Input value: " + n);
         int turn = 0;
@@ -624,6 +574,7 @@ public class HackerRank {
         return turn % 2 == 0 ? "Richard" : "Louise";
     }
 
+    @RecordMethodInfo()
     public static String counterGame1(long n) {
         System.out.println("Input value: " + n);
         int turn = 0;
@@ -654,6 +605,7 @@ public class HackerRank {
         return turn % 2 == 0 ? "Richard" : "Louise";
     }
 
+    @RecordMethodInfo()
     public static int superDigit(String n, int k) {
         System.out.println(n);
         long result = 0;
@@ -667,7 +619,6 @@ public class HackerRank {
         }
         return (int) result;
     }
-
 
     public static class SinglyLinkedListNode {
         public int data;
@@ -722,7 +673,6 @@ public class HackerRank {
         return previousNode;
     }
 
-    //https://www.hackerrank.com/challenges/one-month-preparation-kit-insert-a-node-at-a-specific-position-in-a-linked-list/problem?isFullScreen=true&h_l=interview&playlist_slugs%5B%5D=preparation-kits&playlist_slugs%5B%5D=one-month-preparation-kit&playlist_slugs%5B%5D=one-month-week-three
     public static SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode llist, int data, int position) {
         SinglyLinkedListNode currentNode = llist,
                 resultHead = new SinglyLinkedListNode(0),

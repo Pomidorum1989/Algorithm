@@ -7,6 +7,8 @@ import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 
+import static org.dorum.algo.LeetCode.LC_150;
+
 public class Trees {
     public static class TreeNode {
         int val;
@@ -32,7 +34,7 @@ public class Trees {
     /**
      * <a href="{@link LeetCode#LC_150}94/trees/555/">maxDepth</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LC_150 + "94/trees/555/")
     public static int maxDepth(TreeNode root) {
         if (root == null) {
             return 0;
@@ -66,7 +68,7 @@ public class Trees {
     /**
      * <a href="{@link LeetCode#LC_150}94/trees/555/">maxDepthBFS</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LC_150 + "94/trees/555/")
     public static int maxDepthBFS(TreeNode root) {
         if (root == null) {
             return 0;
@@ -92,7 +94,7 @@ public class Trees {
     /**
      * <a href="{@link LeetCode#LC_150}94/trees/625/">isValidBST</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = LC_150 + "94/trees/625/")
     public static boolean isValidBST(TreeNode root) {
         return isNodeValid(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
@@ -103,8 +105,7 @@ public class Trees {
         } else if (root.val <= left || root.val >= right) {
             return false;
         }
-        return isNodeValid(root.left, left, root.val) &&
-                isNodeValid(root.right, root.val, right);
+        return isNodeValid(root.left, left, root.val) && isNodeValid(root.right, root.val, right);
     }
 
     @RecordMethodInfo()

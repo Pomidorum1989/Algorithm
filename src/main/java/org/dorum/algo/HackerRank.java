@@ -9,9 +9,9 @@ public class HackerRank {
     private static final String HACKER_RANK_LINK = "https://www.hackerrank.com/challenges/";
 
     /**
-     * <a href="{@link ">plusMinus</a>
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}plus-minus/problem">plusMinus</a>
      */
-    @RecordMethodInfo()
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "plus-minus/problem")
     public static void plusMinus(List<Integer> arr) {
         double zero = 0, positive = 0, negative = 0;
         double arrayLength = arr.size();
@@ -31,7 +31,10 @@ public class HackerRank {
         System.out.println(dec.format(zero / arrayLength));
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}mini-max-sum/problem">miniMaxSum</a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "mini-max-sum/problem")
     public static void miniMaxSum(List<Integer> arr) {
         long maximumSum = Long.MIN_VALUE;
         long minimumSum = Long.MAX_VALUE;
@@ -54,7 +57,10 @@ public class HackerRank {
         System.out.println(minimumSum + " " + maximumSum);
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}time-conversion/problem">timeConversion</a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "time-conversion/problem")
     public static String timeConversion(String s) {
         System.out.println("Input time: " + s);
         String[] array = s.replace("AM", "").replace("PM", "").split(":");
@@ -69,7 +75,10 @@ public class HackerRank {
         return s.substring(0, s.length() - 2);
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}matchingStrings/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "matching-strings/problem")
     public static List<Integer> matchingStrings(List<String> strings, List<String> queries) {
         int counter = 0;
         List<Integer> result = new ArrayList<>();
@@ -85,7 +94,10 @@ public class HackerRank {
         return result;
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "lonely-integer/problem")
     public static int lonelyInteger(List<Integer> a) {
         System.out.println("Input array: " + a);
         Collections.sort(a);
@@ -106,6 +118,10 @@ public class HackerRank {
         return a.get(0);
     }
 
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}flipping-bits/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "flipping-bits/problem")
     public static long flippingBits(long n) {
         System.out.println("Input: " + n);
         long[] binary = new long[32];
@@ -135,7 +151,10 @@ public class HackerRank {
         return result;
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}diagonal-difference/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "diagonal-difference/problem")
     public static int diagonalDifference(List<List<Integer>> arr) {
         int counter = 0, left = 0, right = 0;
         for (List<Integer> row : arr) {
@@ -146,7 +165,10 @@ public class HackerRank {
         return Math.abs(left - right);
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}pangrams/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "pangrams/problem")
     public static String pangrams(String s) {
         List<Character> alphabet = new ArrayList<>();
         for (int i = 0; i < 122 - 97; i++) {
@@ -164,7 +186,10 @@ public class HackerRank {
         }
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}birthday/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "birthday/problem")
     public static int birthday(List<Integer> array, int sumOfWindow, int windowSize) {
         int tempSum = 0, counter = 0;
         for (int i = 0; i <= array.size() - windowSize; i++) {
@@ -179,7 +204,10 @@ public class HackerRank {
         return counter;
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}staircase/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "staircase/problem")
     public static void staircaseReverted(int n) {
         for (int i = 0; i < n; i++) {
             for (int j = n - i; j > 0; j--) {
@@ -189,7 +217,10 @@ public class HackerRank {
         }
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}staircase/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "staircase/problem")
     public static void staircase(int n) {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n - i - 1; j++) {
@@ -202,7 +233,10 @@ public class HackerRank {
         }
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}mini-max-sum/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "mini-max-sum/problem")
     public static void miniMaxSum2(List<Integer> arr) {
         long maxSum = Long.MIN_VALUE;
         long minSum = Long.MAX_VALUE;
@@ -222,7 +256,10 @@ public class HackerRank {
         System.out.println(minSum + " " + maxSum);
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}compare-triplets/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "compare-triplets/problem")
     public static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
         int aliceCounter = 0, bobCounter = 0;
         for (int i = 0; i < a.size(); i++) {
@@ -235,7 +272,10 @@ public class HackerRank {
         return Arrays.asList(aliceCounter, bobCounter);
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}ctci-fibonacci-numbers/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "ctci-fibonacci-numbers/problem")
     public static boolean isFibonacci(int[] arr) {
         for (int i = arr.length - 1; i > 1; i--) {
             if (arr[i] != arr[i - 1] + arr[i - 2]) {
@@ -248,6 +288,10 @@ public class HackerRank {
         return true;
     }
 
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}ctci-fibonacci-numbers/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "ctci-fibonacci-numbers/problem")
     public static void createFibonacciSequence(int amount) {
         int n1 = 1, n2 = 2, n3;
         System.out.print(n1 + "-" + n2);
@@ -262,7 +306,10 @@ public class HackerRank {
 
     private static int n1 = 1, n2 = 2;
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}functional-programming-warmups-in-recursion---fibonacci-numbers/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "functional-programming-warmups-in-recursion---fibonacci-numbers/problem")
     public static void fibonacciRecursion(int counter) {
         int n3 = n1 + n2;
         System.out.print("-");
@@ -275,7 +322,10 @@ public class HackerRank {
         }
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "/problem")
     public static List<Integer> minimalHeaviestSetA(List<Integer> arr) {
         arr.sort(Collections.reverseOrder());
         long arrSum = arr.stream().mapToInt(Integer::intValue).sum();
@@ -300,11 +350,13 @@ public class HackerRank {
         return result;
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}two-arrays/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "two-arrays/problem")
     public static String twoArrays(int k, List<Integer> A, List<Integer> B) {
         Collections.sort(A);
         B.sort(Collections.reverseOrder());
-
         for (int i = 0; i < A.size(); i++) {
             if (A.get(i) + B.get(i) < k) {
                 return "NO";
@@ -313,7 +365,10 @@ public class HackerRank {
         return "YES";
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}counting-sort/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "counting-sort/problem")
     public static List<Integer> countingSort(List<Integer> arr) {
         List<Integer> result = new ArrayList<>(Collections.nCopies(100, 0));
         for (Integer integer : arr) {
@@ -331,9 +386,11 @@ public class HackerRank {
         return result;
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}strings-xor/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "strings-xor/problem")
     public static void xor() {
-        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
         String s, t;
         Scanner in = new Scanner(System.in);
         s = in.nextLine();
@@ -351,7 +408,10 @@ public class HackerRank {
         System.out.println(xor);
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "/problem")
     public static int lexicographicalCounter(String word, int substring) {
         int counter = 0;
         for (int i = 0; i < word.length() - substring + 1; i++) {
@@ -369,7 +429,10 @@ public class HackerRank {
         return counter;
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}sock-merchant/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "sock-merchant/problem")
     public static int sockMerchant(int n, List<Integer> ar) {
         int counter = 0;
         Collections.sort(ar);
@@ -384,7 +447,10 @@ public class HackerRank {
         return counter;
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}zig-zag-sequence/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "zig-zag-sequence/problem")
     public static void findZigZagSequence(int[] a) {
         int n = a.length;
         Arrays.sort(a);
@@ -408,6 +474,10 @@ public class HackerRank {
         System.out.println();
     }
 
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "/problem")
     public static int pageCount(int n, int p) {
         int maxTurns = n / 2;
         int middle = maxTurns / 2;
@@ -418,7 +488,10 @@ public class HackerRank {
         return turn;
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}tower-breakers-1/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "tower-breakers-1/problem")
     public static int towerBreakers(int n, int m) {
         // Write your code here
         int blocksSum = n * m;
@@ -433,7 +506,10 @@ public class HackerRank {
         return turn % 2 == 0 ? 1 : 2;
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}caesar-cipher-1/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "caesar-cipher-1/problem")
     public static String caesarCipher(String s, int k) {
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
@@ -458,7 +534,10 @@ public class HackerRank {
         return result.toString();
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}angry-children/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "angry-children/problem")
     public static int maxMin(int k, List<Integer> arr) {
         Collections.sort(arr);
         int unfairness = Integer.MAX_VALUE;
@@ -471,7 +550,10 @@ public class HackerRank {
         return unfairness;
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}grid-challenge/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "grid-challenge/problem")
     public static String gridChallenge(List<String> grid) {
         for (int i = 0; i < grid.size(); i++) {
             char[] array = grid.get(i).toCharArray();
@@ -490,7 +572,10 @@ public class HackerRank {
         return "YES";
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}sherlock-and-array/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "sherlock-and-array/problem")
     public static String balancedSums(List<Integer> arr) {
         System.out.println("Input array: " + arr);
         for (int i = 0; i < arr.size(); i++) {
@@ -515,7 +600,10 @@ public class HackerRank {
         return "NO";
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}sherlock-and-array/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "sherlock-and-array/problem")
     public static String balancedSums1(List<Integer> arr) {
         System.out.println("Input array: " + arr);
         int totalSum = arr.stream().mapToInt(Integer::intValue).sum();
@@ -531,7 +619,10 @@ public class HackerRank {
         return "NO";
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "/problem")
     public static int flippingTheMatrix(List<List<Integer>> matrix) {
         int n = matrix.size() / 2;
         int first = Collections.max(Arrays.asList(
@@ -543,7 +634,10 @@ public class HackerRank {
         return 0;
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}counter-game/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "counter-game/problem")
     public static String counterGame(long n) {
         System.out.println("Input value: " + n);
         int turn = 0;
@@ -574,7 +668,10 @@ public class HackerRank {
         return turn % 2 == 0 ? "Richard" : "Louise";
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}counter-game/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "counter-game/problem")
     public static String counterGame1(long n) {
         System.out.println("Input value: " + n);
         int turn = 0;
@@ -605,7 +702,10 @@ public class HackerRank {
         return turn % 2 == 0 ? "Richard" : "Louise";
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}super-digit/problem"></a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "super-digit/problem")
     public static int superDigit(String n, int k) {
         System.out.println(n);
         long result = 0;
@@ -673,8 +773,8 @@ public class HackerRank {
         return previousNode;
     }
 
-    public static SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode llist, int data, int position) {
-        SinglyLinkedListNode currentNode = llist,
+    public static SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode list, int data, int position) {
+        SinglyLinkedListNode currentNode = list,
                 resultHead = new SinglyLinkedListNode(0),
                 result = resultHead;
         int counter = 0;

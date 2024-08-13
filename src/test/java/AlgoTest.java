@@ -1,4 +1,5 @@
 public class AlgoTest {
+
     public static void main(String[] args) {
         int[] array = new int[]{2, 1, 3, 5, 8, 6, 4};
 //        Arrays.sort(array);

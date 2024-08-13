@@ -27,7 +27,7 @@ public class MethodInfoRecorder {
         return map;
     }
 
-    public static int getLineNumber(Method method) {
+    private static int getLineNumber(Method method) {
         ClassPool pool = ClassPool.getDefault();
         try {
             CtClass cc = pool.get(method.getDeclaringClass().getCanonicalName());

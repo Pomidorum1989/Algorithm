@@ -90,9 +90,9 @@ public class Codility {
     }
 
     /**
-     * <a href="{@link Codility#CODILITY_LINK}1-iterations/">binaryGap</a>
+     * <a href="{@link Codility#CODILITY_LINK}1-iterations/binary_gap">binaryGap</a>
      */
-    @RecordMethodInfo(link = CODILITY_LINK + "1-iterations/")
+    @RecordMethodInfo(link = CODILITY_LINK + "1-iterations/binary_gap")
     public static int binaryGap(int n) {
         System.out.println("Input: " + n);
         if (n % 2 == 0) {
@@ -113,9 +113,9 @@ public class Codility {
     }
 
     /**
-     * <a href="{@link Codility#CODILITY_LINK}2-arrays/">rotateArray</a>
+     * <a href="{@link Codility#CODILITY_LINK}2-arrays/cyclic_rotation/">rotateArray</a>
      */
-    @RecordMethodInfo(link = CODILITY_LINK + "2-arrays/")
+    @RecordMethodInfo(link = CODILITY_LINK + "2-arrays/cyclic_rotation/")
     public static int[] rotateArray(int[] A, int K) {
         System.out.println("Input array: " + Arrays.toString(A));
         System.out.println("Input: " + K);
@@ -134,9 +134,9 @@ public class Codility {
     }
 
     /**
-     * <a href="{@link Codility#CODILITY_LINK}2-arrays/">rotateArray</a>
+     * <a href="{@link Codility#CODILITY_LINK}2-arrays/odd_occurrences_in_array/">findExtraElement</a>
      */
-    @RecordMethodInfo(link = CODILITY_LINK + "2-arrays/")
+    @RecordMethodInfo(link = CODILITY_LINK + "2-arrays/odd_occurrences_in_array/")
     public static int findExtraElement(int[] A) {
         System.out.println("Input array: " + Arrays.toString(A));
         HashSet<Integer> result = new HashSet<>();
@@ -151,9 +151,9 @@ public class Codility {
     }
 
     /**
-     * <a href="{@link Codility#CODILITY_LINK}3-time_complexity/">frogJump</a>
+     * <a href="{@link Codility#CODILITY_LINK}3-time_complexity/frog_jmp/">frogJump</a>
      */
-    @RecordMethodInfo(link = CODILITY_LINK + "3-time_complexity")
+    @RecordMethodInfo(link = CODILITY_LINK + "3-time_complexityfrog_jmp/")
     public static int frogJump(int start, int end, int jump) {
         int distance = end - start;
         if (distance <= 0) {
@@ -168,9 +168,9 @@ public class Codility {
     }
 
     /**
-     * <a href="{@link Codility#CODILITY_LINK}3-time_complexity/">permMissingElem</a>
+     * <a href="{@link Codility#CODILITY_LINK}3-time_complexity/perm_missing_elem/">permMissingElem</a>
      */
-    @RecordMethodInfo(link = CODILITY_LINK + "3-time_complexity")
+    @RecordMethodInfo(link = CODILITY_LINK + "3-time_complexity/perm_missing_elem/")
     public static int permMissingElem(int[] A) {
         if (A.length == 0) {
             return 1;
@@ -187,9 +187,9 @@ public class Codility {
     }
 
     /**
-     * <a href="{@link Codility#CODILITY_LINK}3-time_complexity/">tapeEquilibrium</a>
+     * <a href="{@link Codility#CODILITY_LINK}3-time_complexity/tapeEquilibrium/">tape_equilibrium/</a>
      */
-    @RecordMethodInfo(link = CODILITY_LINK + "3-time_complexity")
+    @RecordMethodInfo(link = CODILITY_LINK + "3-time_complexity/tape_equilibrium/")
     public static int tapeEquilibrium(int[] A) {
         int totalSum = 0, result = Integer.MAX_VALUE;
         for (int element : A) {
@@ -208,9 +208,9 @@ public class Codility {
     }
 
     /**
-     * <a href="{@link Codility#CODILITY_LINK}4-counting_elements/">frogRiverOne</a>
+     * <a href="{@link Codility#CODILITY_LINK}4-counting_elements/frog_river_one/">frogRiverOne</a>
      */
-    @RecordMethodInfo(link = CODILITY_LINK + "4-counting_elements/")
+    @RecordMethodInfo(link = CODILITY_LINK + "4-counting_elements/frog_river_one/")
     public static int frogRiverOne(int X, int[] A) {
         Set<Integer> steps = new HashSet<>();
         for (int i = 1; i <= X; i++) {
@@ -227,9 +227,9 @@ public class Codility {
     }
 
     /**
-     * <a href="{@link Codility#CODILITY_LINK}4-counting_elements/">permCheck</a>
+     * <a href="{@link Codility#CODILITY_LINK}4-counting_elements/perm_check">permCheck</a>
      */
-    @RecordMethodInfo(link = CODILITY_LINK + "4-counting_elements/")
+    @RecordMethodInfo(link = CODILITY_LINK + "4-counting_elements/perm_check")
     public static int permCheck(int[] A) {
         int expectedSum = (A.length * (A.length + 1)) / 2;
         int currentSum = 0;
@@ -240,9 +240,9 @@ public class Codility {
     }
 
     /**
-     * <a href="{@link Codility#CODILITY_LINK}4-counting_elements/">permCheck1</a>
+     * <a href="{@link Codility#CODILITY_LINK}4-counting_elements/perm_check">permCheck1</a>
      */
-    @RecordMethodInfo(link = CODILITY_LINK + "4-counting_elements/")
+    @RecordMethodInfo(link = CODILITY_LINK + "4-counting_elements/perm_check")
     public static int permCheck1(int[] A) {
         Set<Integer> set = new HashSet<>();
         for (int i = 1; i <= A.length; i++) {
@@ -259,9 +259,9 @@ public class Codility {
     }
 
     /**
-     * <a href="{@link Codility#CODILITY_LINK}4-counting_elements/">missingInteger</a>
+     * <a href="{@link Codility#CODILITY_LINK}4-counting_elements/missing_integer/">missingInteger</a>
      */
-    @RecordMethodInfo(link = CODILITY_LINK + "4-counting_elements/")
+    @RecordMethodInfo(link = CODILITY_LINK + "4-counting_elements/missing_integer/")
     public static int missingInteger(int[] A) {
         Set<Integer> set = new HashSet<>();
         for (int i = 1; i <= A.length + 1; i++) {
@@ -276,9 +276,9 @@ public class Codility {
     }
 
     /**
-     * <a href="{@link Codility#CODILITY_LINK}5-prefix_sums/">passingCars</a>
+     * <a href="{@link Codility#CODILITY_LINK}5-prefix_sums/passing_cars">passingCars</a>
      */
-    @RecordMethodInfo(link = CODILITY_LINK + "5-prefix_sum/")
+    @RecordMethodInfo(link = CODILITY_LINK + "5-prefix_sum/passing_cars")
     public static int passingCars(int[] A) {
         System.out.println("Input array:" + Arrays.toString(A));
         int carsTravellingEast = 0;

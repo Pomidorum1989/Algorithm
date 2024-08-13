@@ -216,7 +216,6 @@ public class LinkedList {
         return true;
     }
 
-
     /**
      * <a href="{@link LeetCode#LC_150}93/linked-list/773/">hasCycle</a>
      */

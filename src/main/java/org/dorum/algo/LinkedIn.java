@@ -13,9 +13,9 @@ public class LinkedIn {
     public static final String LINKEDIN_LINK = "https://www.linkedin.com/learning/nail-your-java-interview-2/";
 
     /**
-     * <a href="{@link LinkedIn#LINKEDIN_LINK}the-secret-to-nailing-your-java-interview?u=106534538">countWordsInSentence</a>
+     * <a href="{@link LinkedIn#LINKEDIN_LINK}">countWordsInSentence</a>
      */
-    @RecordMethodInfo(link = LINKEDIN_LINK + "the-secret-to-nailing-your-java-interview?u=106534538")
+    @RecordMethodInfo(link = LINKEDIN_LINK)
     public static void countWordsInSentence(String input) {
         String[] exclude = {",", "\\.", " a ", " the ", " to ", " of ", " are ", " is "};
         for (String string : exclude) {
@@ -55,7 +55,10 @@ public class LinkedIn {
         System.out.println("_____________________________________________________________________________________");
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link LinkedIn#LINKEDIN_LINK}">countWordsInSentence</a>
+     */
+    @RecordMethodInfo(link = LINKEDIN_LINK)
     public static boolean findParentheses1(String input) {
         Map<Character, Character> parentheses = Map.of(')', '(', '>', '<', ']', '[');
         Stack<Character> stack = new Stack<>();
@@ -75,7 +78,10 @@ public class LinkedIn {
         return stack.isEmpty();
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link LinkedIn#LINKEDIN_LINK}">countWordsInSentence</a>
+     */
+    @RecordMethodInfo(link = LINKEDIN_LINK)
     public static boolean findParentheses(String input) {
         System.out.println("Input string: " + input);
         String[] openBrackets = new String[]{"(", "<", "["};
@@ -130,6 +136,10 @@ public class LinkedIn {
         }
     }
 
+    /**
+     * <a href="{@link LinkedIn#LINKEDIN_LINK}">countWordsInSentence</a>
+     */
+    @RecordMethodInfo(link = LINKEDIN_LINK)
     public static void deleteMiddleNode(CustomNode<Integer>[] array) {
         System.out.println("Input array: " + Arrays.toString(array));
         int middleNodeIndex = (array.length % 2 == 0) ? array.length / 2 : array.length / 2 + 1;
@@ -137,6 +147,10 @@ public class LinkedIn {
         System.out.println("Output array: " + Arrays.toString(array));
     }
 
+    /**
+     * <a href="{@link LinkedIn#LINKEDIN_LINK}">countWordsInSentence</a>
+     */
+    @RecordMethodInfo(link = LINKEDIN_LINK)
     public static void maximumProductOf2Numbers(int[] array) {
         if (array.length < 2) {
             System.out.println("Less than 2 numbers in the array");
@@ -167,7 +181,10 @@ public class LinkedIn {
         System.out.println("----------------------------------");
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link LinkedIn#LINKEDIN_LINK}">countWordsInSentence</a>
+     */
+    @RecordMethodInfo(link = LINKEDIN_LINK)
     public static void vowelsCounter(String word) {
         char[] vowels = new char[]{'a', 'e', 'i', 'o', 'u', 'y'};
         String vowelsAsString = "aeiouy";
@@ -193,7 +210,10 @@ public class LinkedIn {
         System.out.println("Consonants:" + (word.length() - numberOfVowels));
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link LinkedIn#LINKEDIN_LINK}">countWordsInSentence</a>
+     */
+    @RecordMethodInfo(link = LINKEDIN_LINK)
     public static boolean palindromeChecker(String word) {
         System.out.println("Input: " + word);
         String reversed = new StringBuilder(word).reverse().toString();
@@ -216,13 +236,19 @@ public class LinkedIn {
         }
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link LinkedIn#LINKEDIN_LINK}">countWordsInSentence</a>
+     */
+    @RecordMethodInfo(link = LINKEDIN_LINK)
     public static void compare2strings(String one, String two) {
         int res = one.compareTo(two);
         System.out.println(res);
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link LinkedIn#LINKEDIN_LINK}">countWordsInSentence</a>
+     */
+    @RecordMethodInfo(link = LINKEDIN_LINK)
     public static void bubbleSort(int[] array) {
         for (int i = array.length - 1; i >= 1; i--) {
             for (int j = 0; j < i; j++) {
@@ -235,7 +261,10 @@ public class LinkedIn {
         }
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link LinkedIn#LINKEDIN_LINK}">countWordsInSentence</a>
+     */
+    @RecordMethodInfo(link = LINKEDIN_LINK)
     public static int singleNumber(int[] nums) {
         int result = nums[0];
         for (int i = 0; i < nums.length; i++) {
@@ -249,7 +278,10 @@ public class LinkedIn {
         return result;
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link LinkedIn#LINKEDIN_LINK}">countWordsInSentence</a>
+     */
+    @RecordMethodInfo(link = LINKEDIN_LINK)
     public static boolean containsDuplicate(int[] nums) {
         for (int i = 0; i < nums.length; i++) {
             for (int j = 0; j < nums.length; j++) {
@@ -261,7 +293,10 @@ public class LinkedIn {
         return false;
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link LinkedIn#LINKEDIN_LINK}">countWordsInSentence</a>
+     */
+    @RecordMethodInfo(link = LINKEDIN_LINK)
     private static int removeDuplicates(int[] nums) {
         int k = 0;
         for (int i = 0; i < nums.length; i++) {
@@ -293,7 +328,10 @@ public class LinkedIn {
         return k;
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link LinkedIn#LINKEDIN_LINK}">countWordsInSentence</a>
+     */
+    @RecordMethodInfo(link = LINKEDIN_LINK)
     private static void swap() {
 //        int[] nums = new int[]{1, 2, 3, 4, 5, 6, 7};
 //        int k = 3;
@@ -326,7 +364,10 @@ public class LinkedIn {
         System.out.println("Result: " + Arrays.toString(nums));
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link LinkedIn#LINKEDIN_LINK}">countWordsInSentence</a>
+     */
+    @RecordMethodInfo(link = LINKEDIN_LINK)
     private static void profit() {
         int[] prices = new int[]{7, 1, 5, 3, 6, 4};
         int profit = 0;
@@ -341,7 +382,10 @@ public class LinkedIn {
         System.out.println("Profit: " + profit);
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link LinkedIn#LINKEDIN_LINK}">countWordsInSentence</a>
+     */
+    @RecordMethodInfo(link = LINKEDIN_LINK)
     public static String decimalToBinary(int decimal) {
         StringBuilder builder = new StringBuilder();
         while (decimal != 0) {
@@ -355,7 +399,10 @@ public class LinkedIn {
         return builder.toString();
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link LinkedIn#LINKEDIN_LINK}">countWordsInSentence</a>
+     */
+    @RecordMethodInfo(link = LINKEDIN_LINK)
     public static int romanToInt(String s) {
         Map<Character, Integer> m = new HashMap<>();
         m.put('I', 1);

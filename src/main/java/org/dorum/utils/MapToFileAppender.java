@@ -2,6 +2,7 @@ package org.dorum.utils;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.dorum.algo.*;
 
 import java.io.*;
 import java.util.List;
@@ -13,44 +14,60 @@ public class MapToFileAppender {
     @AllArgsConstructor
     @Getter
     public enum TaskType {
-        LEET_CODE("LeetCode"),
-        CODILITY("Codility"),
-        HACKER_RANK("HackerRank"),
-        LINKED_IN("LinkedIn");
+        ALGO_EXPERT("AlgoExpert", AlgoExpert.class),
+        BAIRES_DEV("BairesDev", BairesDev.class),
+        CODILITY("Codility", Codility.class),
+        HABR("Habr", Habr.class),
+        HACKER_RANK("HackerRank", HackerRank.class),
+        LEET_CODE("LeetCode", LeetCode.class),
+        LINKED_IN("LinkedIn", LinkedIn.class);
 
         private final String type;
+        private final Class<?> className;
     }
 
-    public static void appendAfterStatement(Map<String, List<String>> map, String filePath, String targetStatement, TaskType taskType) {
-        // Temporary file to store the updated content
-        File tempFile = new File(filePath + ".tmp");
+    public static void appendAfterStatement(TaskType taskType) {
+        Map<String, List<String>> map = MethodInfoRecorder.recordMethodInfo(taskType.getClassName());
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(filePath));
+        // Temporary file to store the updated content
+        File tempFile = new File("README.md.tmp");
+
+        try (BufferedReader reader = new BufferedReader(new FileReader("README.md"));
              BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile))) {
 
             String line;
             boolean found = false;
+            boolean writingNewContent = false;
 
             // Read the file line by line
             while ((line = reader.readLine()) != null) {
-                writer.write(line);
-                writer.newLine();
+                if (!found) {
+                    // Write lines until we find the target statement
+                    writer.write(line);
+                    writer.newLine();
 
-                // Check if the current line matches the target statement
-                if (line.trim().equals(targetStatement)) {
-                    found = true;
+                    // Check if the current line matches the target statement
+                    if (line.trim().equals(String.format("### %s Method References", taskType.getType()))) {
+                        found = true;
+                        writingNewContent = true;
 
-                    // Write the new content after the target statement
-                    for (Map.Entry<String, List<String>> entry : map.entrySet()) {
-                        String key = entry.getKey();
-                        List<String> values = entry.getValue();
-                        writer.write("Method: " + "[`" + key + "`]" +
-                                "(" + REPO_LINK + taskType.getType() + ".java#L" + values.get(0) + ")<br>");
-                        writer.newLine();
-                        writer.write("Problem link: " + "[`" + key + "`]" + "(" + values.get(1) + ")<br>");
-                        writer.newLine();
-                        writer.write("---------------------------------------------------------------------------<br>");
-                        writer.newLine();
+                        // Write the new content
+                        for (Map.Entry<String, List<String>> entry : map.entrySet()) {
+                            String key = entry.getKey();
+                            List<String> values = entry.getValue();
+                            writer.write("Method: " + "[`" + key + "`]" +
+                                    "(" + REPO_LINK + taskType.getType() + ".java#L" + values.get(0) + ")<br>");
+                            writer.newLine();
+                            writer.write("Problem link: " + "[`" + key + "`]" + "(" + values.get(1) + ")<br>");
+                            writer.newLine();
+                            writer.write("---------------------------------------------------------------------------<br>");
+                            writer.newLine();
+                        }
+                    }
+                } else {
+                    // Skip old content after target statement if we are writing new content
+                    if (writingNewContent) {
+                        writingNewContent = false;  // We will only write new content once
                     }
                 }
             }
@@ -63,6 +80,9 @@ public class MapToFileAppender {
         }
 
         // Replace the original file with the updated file
-        tempFile.renameTo(new File(filePath));
+        boolean success = tempFile.renameTo(new File("README.md"));
+        if (!success) {
+            System.out.println("Failed to replace the original file.");
+        }
     }
 }

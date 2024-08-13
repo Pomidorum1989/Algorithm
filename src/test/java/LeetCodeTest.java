@@ -1,8 +1,16 @@
+import org.dorum.algo.LeetCode;
+import org.dorum.utils.MapToFileAppender;
+import org.dorum.utils.MethodInfoRecorder;
+
+import java.util.List;
+import java.util.Map;
+
 public class LeetCodeTest {
     public static void main(String[] args) {
-//        Map<String, List<String>> map = MethodInfoRecorder.recordMethodInfo(LeetCode.class);
-//        MapToFileAppender.appendAfterStatement(map, "README.md", "## LeetCode Method References",
-//                MapToFileAppender.TaskType.LEET_CODE);
+        MapToFileAppender.appendAfterStatement(MapToFileAppender.TaskType.ALGO_EXPERT);
+//        MapToFileAppender.appendAfterStatement(MapToFileAppender.TaskType.CODILITY);
+//        MapToFileAppender.appendAfterStatement(MapToFileAppender.TaskType.LEET_CODE);
+//        MapToFileAppender.appendAfterStatement(MapToFileAppender.TaskType.HACKER_RANK);
 
 //        compress(new char[]{'a','a','b','b','c','c','c'});
 //        compress(new char[]{'a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b'});

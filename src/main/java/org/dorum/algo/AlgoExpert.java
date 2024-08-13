@@ -8,7 +8,12 @@ import java.util.Map;
 
 public class AlgoExpert {
 
-    @RecordMethodInfo()
+    private static final String ALGO_EXPERT_LINK = "https://www.algoexpert.io/questions";
+
+    /**
+     * <a href="{@link AlgoExpert#ALGO_EXPERT_LINK}">sumOfTwo</a>
+     */
+    @RecordMethodInfo(link = ALGO_EXPERT_LINK)
     public static void sumOfTwo(int[] array, int sum) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < array.length; i++) {
@@ -20,8 +25,11 @@ public class AlgoExpert {
         System.out.println(map);
     }
 
-    @RecordMethodInfo()
-    public static void sumOfNUmber(int[] array, int sum) {
+    /**
+     * <a href="{@link AlgoExpert#ALGO_EXPERT_LINK}">sumOfNumber</a>
+     */
+    @RecordMethodInfo(link = ALGO_EXPERT_LINK)
+    public static void sumOfNumber(int[] array, int sum) {
         for (int i = 0; i < array.length; i++) {
             for (int j = i + 1; j < array.length; j++) {
                 if (array[i] + array[j] == sum) {
@@ -34,7 +42,10 @@ public class AlgoExpert {
         }
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link AlgoExpert#ALGO_EXPERT_LINK}">validateSubSequence</a>
+     */
+    @RecordMethodInfo(link = ALGO_EXPERT_LINK)
     public static boolean validateSubSequence(int[] inputArray, int[] sequenceArray) {
         int inputPointer = 0;
         int sequencePointer = 0;
@@ -58,7 +69,10 @@ public class AlgoExpert {
         return false;
     }
 
-    @RecordMethodInfo()
+    /**
+     * <a href="{@link AlgoExpert#ALGO_EXPERT_LINK}">binarySearch</a>
+     */
+    @RecordMethodInfo(link = ALGO_EXPERT_LINK)
     public static int binarySearch(int[] array, int target) {
         System.out.println(Arrays.toString(array));
         int leftIndex = 0;

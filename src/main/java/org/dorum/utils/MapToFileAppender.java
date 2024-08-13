@@ -28,11 +28,9 @@ public class MapToFileAppender {
                     for (Map.Entry<String, List<String>> entry : map.entrySet()) {
                         String key = entry.getKey();
                         List<String> values = entry.getValue();
-                        writer.write("Method: " + key + "<br>");
-                        writer.newLine();
-                        writer.write("Solution link: " +
-                                "https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L"
-                                + values.get(0) + "<br>");
+                        writer.write("Method: " + "[`" + key + "`]" +
+                                "(https://github.com/pomidorum1989/java-algorithms/blob/master/src/main/java/org/dorum/algo/LeetCode.java#L"
+                                + values.get(0) + ")<br>");
                         writer.newLine();
                         writer.write("Problem link: " + values.get(1) + "<br>");
                         writer.newLine();

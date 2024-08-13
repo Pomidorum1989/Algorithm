@@ -122,23 +122,21 @@ public class Codility {
     }
 
     //https://app.codility.com/programmers/lessons/1-iterations/
-    public static int binaryGap(int N) {
-        System.out.println("Input: " + N);
-        if (N % 2 == 0) {
+    public static int binaryGap(int n) {
+        System.out.println("Input: " + n);
+        if (n % 2 == 0) {
             return 0;
         }
         int counter = 0;
         int temp = 0;
-        while (N > 0) {
-            if (N % 2 == 0) {
+        while (n > 0) {
+            if (n % 2 == 0) {
                 counter++;
             } else if (counter > temp) {
                 temp = counter;
                 counter = 0;
             }
-//            System.out.println("Remainder: " + N % 2);
-            N = N / 2;
-//            System.out.println("Current N: " + N);
+            n = n / 2;
         }
         return temp;
     }
@@ -167,9 +165,9 @@ public class Codility {
         HashSet<Integer> result = new HashSet<>();
         for (int j : A) {
             if (result.contains(j)) {
-                result.remove(new Integer(j));
+                result.remove(j);
             } else {
-                result.add(new Integer(j));
+                result.add(j);
             }
         }
         return result.iterator().next();

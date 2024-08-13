@@ -9,9 +9,9 @@ import java.util.Map;
 
 public class LeetCodeTest {
     public static void main(String[] args) {
-        Map<String, List<String>> map = MethodInfoRecorder.recordMethodInfo(LeetCode.class);
-        MapToFileAppender.appendAfterStatement(map, "README.md", "## LeetCode Method References",
-                MapToFileAppender.TaskType.LEET_CODE);
+//        Map<String, List<String>> map = MethodInfoRecorder.recordMethodInfo(LeetCode.class);
+//        MapToFileAppender.appendAfterStatement(map, "README.md", "## LeetCode Method References",
+//                MapToFileAppender.TaskType.LEET_CODE);
 
 //        compress(new char[]{'a','a','b','b','c','c','c'});
 //        compress(new char[]{'a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b'});

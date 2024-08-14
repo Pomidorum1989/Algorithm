@@ -1,6 +1,5 @@
 import org.dorum.algo.Trees;
-
-import org.dorum.algo.Trees.TreeNode;
+import org.dorum.algo.Trees.*;
 import org.junit.jupiter.api.Test;
 
 import static org.dorum.algo.Trees.*;

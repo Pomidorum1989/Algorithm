@@ -707,7 +707,6 @@ public class HackerRank {
      */
     @RecordMethodInfo(link = HACKER_RANK_LINK + "super-digit/problem")
     public static int superDigit(String n, int k) {
-        System.out.println(n);
         long result = 0;
         for (int i = 0; i < n.length(); i++) {
             result += k * Long.parseLong(String.valueOf(n.charAt(i)));

@@ -1,10 +1,5 @@
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.function.UnaryOperator;
-
 import static org.dorum.algo.LinkedIn.*;
 
 public class LinkedInTest {

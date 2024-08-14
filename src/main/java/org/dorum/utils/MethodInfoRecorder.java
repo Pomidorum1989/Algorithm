@@ -6,17 +6,14 @@ import javassist.CtMethod;
 import javassist.NotFoundException;
 
 import java.lang.reflect.Method;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static java.lang.reflect.Modifier.isStatic;
 
 public class MethodInfoRecorder {
 
     public static Map<String, List<String>> recordMethodInfo(Class<?> clazz) {
-        Map<String, List<String>> map = new HashMap<>();
+        Map<String, List<String>> map = new LinkedHashMap<>();
         for (Method method : clazz.getDeclaredMethods()) {
             if (method.isAnnotationPresent(RecordMethodInfo.class) && isStatic(method.getModifiers())) {
                 RecordMethodInfo annotation = method.getAnnotation(RecordMethodInfo.class);

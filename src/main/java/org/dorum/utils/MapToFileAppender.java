@@ -28,62 +28,69 @@ public class MapToFileAppender {
     }
 
     public static void appendAfterStatement(TaskType taskType) {
-        Map<String, List<String>> map = MethodInfoRecorder.recordMethodInfo(taskType.getClassName());
-
-        // Temporary file to store the updated content
+        Map<String, List<String>> methodInfo = MethodInfoRecorder.recordMethodInfo(taskType.getClassName());
         File tempFile = new File("README.md.tmp");
-
         try (BufferedReader reader = new BufferedReader(new FileReader("README.md"));
              BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile))) {
-
             String line;
             boolean found = false;
-            boolean writingNewContent = false;
-
-            // Read the file line by line
             while ((line = reader.readLine()) != null) {
-                if (!found) {
-                    // Write lines until we find the target statement
-                    writer.write(line);
-                    writer.newLine();
-
-                    // Check if the current line matches the target statement
-                    if (line.trim().equals(String.format("### %s Method References", taskType.getType()))) {
-                        found = true;
-                        writingNewContent = true;
-
-                        // Write the new content
-                        for (Map.Entry<String, List<String>> entry : map.entrySet()) {
-                            String key = entry.getKey();
-                            List<String> values = entry.getValue();
-                            writer.write("Method: " + "[`" + key + "`]" +
-                                    "(" + REPO_LINK + taskType.getType() + ".java#L" + values.get(0) + ")<br>");
-                            writer.newLine();
-                            writer.write("Problem link: " + "[`" + key + "`]" + "(" + values.get(1) + ")<br>");
-                            writer.newLine();
-                            writer.write("---------------------------------------------------------------------------<br>");
-                            writer.newLine();
-                        }
-                    }
-                } else {
-                    // Skip old content after target statement if we are writing new content
-                    if (writingNewContent) {
-                        writingNewContent = false;  // We will only write new content once
-                    }
+                writer.write(line);
+                writer.newLine();
+                if (!found && line.trim().equals(String.format("### %s Method References", taskType.getType()))) {
+                    found = true;
+                    appendNewContent(writer, methodInfo, taskType);
                 }
             }
-
             if (!found) {
                 System.out.println("Target statement not found in the file.");
             }
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            System.err.println("Error processing file: " + e.getMessage());
         }
+        if (!tempFile.renameTo(new File("README.md"))) {
+            System.err.println("Failed to replace the original file.");
+        }
+    }
 
-        // Replace the original file with the updated file
-        boolean success = tempFile.renameTo(new File("README.md"));
-        if (!success) {
-            System.out.println("Failed to replace the original file.");
+    private static void appendNewContent(BufferedWriter writer, Map<String, List<String>> methodInfo,
+                                         TaskType taskType) throws IOException {
+        for (Map.Entry<String, List<String>> entry : methodInfo.entrySet()) {
+            String methodName = entry.getKey();
+            List<String> links = entry.getValue();
+            writer.write(String.format("Method: [`%s`](%s%s.java#L%s)<br>", methodName, REPO_LINK, taskType.getType(), links.get(0)));
+            writer.newLine();
+            writer.write(String.format("Problem link: [`%s`](%s)<br>", methodName, links.get(1)));
+            writer.newLine();
+            writer.write("---------------------------------------------------------------------------<br>");
+            writer.newLine();
         }
+        appendNextTaskReference(writer, taskType);
+    }
+
+    private static void appendNextTaskReference(BufferedWriter writer, TaskType taskType) throws IOException {
+        switch (taskType) {
+            case LEET_CODE:
+                writeTaskReference(writer, TaskType.HACKER_RANK);
+                break;
+            case HACKER_RANK:
+                writeTaskReference(writer, TaskType.CODILITY);
+                break;
+            case CODILITY:
+                writeTaskReference(writer, TaskType.ALGO_EXPERT);
+                break;
+            case ALGO_EXPERT:
+                writeTaskReference(writer, TaskType.HABR);
+                break;
+            default:
+                break;
+        }
+    }
+
+    private static void writeTaskReference(BufferedWriter writer, TaskType nextTask) throws IOException {
+        writer.write(String.format("%s [`%s.java`](%s%s.class)", nextTask.getType(), nextTask.getType(), REPO_LINK, nextTask.getType()));
+        writer.newLine();
+        writer.write(String.format("### %s Method References", nextTask.getType()));
+        writer.newLine();
     }
 }

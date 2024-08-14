@@ -78,20 +78,22 @@ public class LeetCode {
 
     /**
      * <a href="{@link LeetCode#LC_150}92/array/646/">rotate1</a>
+     *
      */
     @RecordMethodInfo(link = LC_150 + "92/array/646/")
-    public static void rotate1(int[] nums, int k) {
+    public static int[] rotate1(int[] nums, int k) {
         k %= nums.length;
         reverse1(nums, 0, nums.length - 1);
         reverse1(nums, 0, k - 1);
         reverse1(nums, k, nums.length - 1);
+        return nums;
     }
 
     /**
      * <a href="{@link LeetCode#LC_150}92/array/646/">rotate2</a>
      */
     @RecordMethodInfo(link = LC_150 + "92/array/646/")
-    public static void rotate2(int[] nums, int k) {
+    public static int[] rotate2(int[] nums, int k) {
         for (int i = 0; i < k; i++) {
             for (int j = 0; j < nums.length; j++) {
                 int temp = nums[0];
@@ -99,6 +101,7 @@ public class LeetCode {
                 nums[j] = temp;
             }
         }
+        return nums;
     }
 
     private static void reverse1(int[] nums, int start, int end) {
@@ -111,12 +114,13 @@ public class LeetCode {
         }
     }
 
-    public static void reverse(int[] nums) {
+    public static int[] reverse(int[] nums) {
         for (int i = 0; i < nums.length / 2; i++) {
             int temp = nums[i];
             nums[i] = nums[nums.length - i - 1];
             nums[nums.length - i - 1] = temp;
         }
+        return nums;
     }
 
     /**
@@ -195,7 +199,7 @@ public class LeetCode {
     /**
      * <a href="{@link LeetCode#LC_150}92/array/559/">plusOne</a>
      */
-    @RecordMethodInfo(link = LEET_CODE_PROBLEM + "xplore/interview/card/top-interview-questions-easy/92/array/559/")
+    @RecordMethodInfo(link = LEET_CODE_PROBLEM + "92/array/559/")
     public static int[] plusOne(int[] digits) {
         StringBuilder input = new StringBuilder();
         for (int digit : digits) {
@@ -249,7 +253,7 @@ public class LeetCode {
      * <a href="{@link LeetCode#LC_150}92/array/567/">moveZeroes</a>
      */
     @RecordMethodInfo(link = LC_150 + "92/array/567/")
-    public static void moveZeroes(int[] nums) {
+    public static int[] moveZeroes(int[] nums) {
         int i = 0, k = 0;
         while (i < nums.length) {
             if (nums[i] != 0) {
@@ -262,6 +266,7 @@ public class LeetCode {
             }
             i++;
         }
+        return nums;
     }
 
     /**
@@ -470,7 +475,7 @@ public class LeetCode {
     /**
      * <a href="{@link LeetCode#LC_150}127/strings/883/">isPalindrome2</a>
      */
-    @RecordMethodInfo(link = LEET_CODE_PROBLEM + "")
+    @RecordMethodInfo(link = LEET_CODE_PROBLEM + "127/strings/883/")
     public static boolean isPalindrome2(String s) {
         String s1 = s.toLowerCase().replaceAll("[^\\w\\d]", "").replaceAll("_", "");
         for (int i = 0; i < s1.length(); i++) {
@@ -620,7 +625,7 @@ public class LeetCode {
      * <a href="{@link LeetCode#LEET_CODE_PROBLEM}merge-sorted-array/">merge</a>
      */
     @RecordMethodInfo(link = LEET_CODE_PROBLEM + "merge-sorted-array")
-    public static void merge(int[] nums1, int m, int[] nums2, int n) {
+    public static int[] merge(int[] nums1, int m, int[] nums2, int n) {
         for (int i = 0; i < nums2.length; i++) {
             nums1[nums1.length - i - 1] = nums2[nums2.length - i - 1];
         }
@@ -633,6 +638,7 @@ public class LeetCode {
                 }
             }
         }
+        return nums1;
     }
 
     /**

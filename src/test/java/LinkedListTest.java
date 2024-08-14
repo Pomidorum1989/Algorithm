@@ -2,7 +2,6 @@ import org.dorum.algo.LinkedList;
 import org.junit.jupiter.api.Test;
 
 import static org.dorum.algo.LinkedList.*;
-import static org.dorum.algo.LinkedList.hasCycle;
 
 public class LinkedListTest {
     private static final LinkedList.Node left;

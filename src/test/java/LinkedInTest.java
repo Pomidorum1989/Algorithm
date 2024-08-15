@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.dorum.algo.LinkedIn.*;
@@ -27,32 +28,32 @@ public class LinkedInTest {
 
     @Test
     public void countWordsInSentenceTest() {
-        countWordsInSentence(TEST_STRING);
-        countWordsInSentence(TEST_STRING_2);
-        countWordsInSentence(TEST_STRING_3);
-        countWordsInSentence(TEST_STRING_2);
-        countWordsInSentence(TEST_STRING_3);
+        Assertions.assertEquals("lorem", countWordsInSentence(TEST_STRING));
+        Assertions.assertEquals("penguins", countWordsInSentence(TEST_STRING_2));
+        Assertions.assertEquals("used", countWordsInSentence(TEST_STRING_3));
+        Assertions.assertEquals("penguins", countWordsInSentence(TEST_STRING_2));
+        Assertions.assertEquals("used", countWordsInSentence(TEST_STRING_3));
     }
 
     @Test
     public void findParenthesesTest() {
-        System.out.println(findParentheses1("()[]"));
-        System.out.println(findParentheses1("(Valik)[Ira]"));
-        System.out.println(findParentheses1("([>"));
-        System.out.println(findParentheses1("(Valik)[Ira"));
-        System.out.println(findParentheses1("(Valik[I>ra"));
-        System.out.println(findParentheses1("Valik)Ira"));
+        Assertions.assertTrue(findParentheses1("()[]"));
+        Assertions.assertTrue(findParentheses1("(Valik)[Ira]"));
+        Assertions.assertFalse(findParentheses1("([>"));
+        Assertions.assertFalse(findParentheses1("(Valik)[Ira"));
+        Assertions.assertFalse(findParentheses1("(Valik[I>ra"));
+        Assertions.assertFalse(findParentheses1("Valik)Ira"));
     }
 
     @Test
     public void decimalToBinaryTest() {
-        System.out.println(decimalToBinary(37));
+        Assertions.assertEquals("101001", decimalToBinary(37));
     }
 
     @Test
     public void palindromeCheckerTest() {
-        palindromeChecker("Civic");
-        palindromeChecker("Valik");
+        Assertions.assertTrue(palindromeChecker("Civic"));
+        Assertions.assertFalse(palindromeChecker("Valik"));
     }
 
     @Test
@@ -81,6 +82,6 @@ public class LinkedInTest {
 
     @Test
     public void vowelsCounterTest() {
-        vowelsCounter("Valentine");
+        Assertions.assertEquals(4, vowelsCounter("Valentine"));
     }
 }

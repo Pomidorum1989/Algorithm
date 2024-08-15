@@ -58,7 +58,7 @@ public class Codility {
     }
 
     @RecordMethodInfo()
-    public static void findMinimumValueIndex(int[] array) {
+    public static int findMinimumValueIndex(int[] array) {
         int minimumValueIndex = 0;
         for (int k : array) {
             for (int i = 0; i < array.length; i++) {
@@ -70,24 +70,39 @@ public class Codility {
         }
         System.out.println("Minimum value index: " + minimumValueIndex);
         System.out.println("Minimum value : " + array[minimumValueIndex]);
+        return minimumValueIndex;
     }
 
     @RecordMethodInfo()
-    public static void bubbleSort(int[] array) {
+    public static int findMinimumValueIndex1(int[] array) {
+        int minimumValueIndex = 0;
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] > array[i + 1]) {
+                minimumValueIndex = i;
+            }
+        }
+        System.out.println("Minimum value index: " + minimumValueIndex);
+        System.out.println("Minimum value : " + array[minimumValueIndex]);
+        return minimumValueIndex;
+    }
+
+    @RecordMethodInfo()
+    public static int[] bubbleSort(int[] array) {
         int actionCounter = 0;
         System.out.println("Input array: " + Arrays.toString(array));
         for (int i = 0; i < array.length - 1; i++) {
-            for (int j = i; j < array.length - i - 1; j++) {
-                if (array[i] < array[j]) {
+            for (int j = 0; j < array.length - i - 1; j++) {
+                if (array[j] < array[j + 1]) {
                     actionCounter++;
-                    int temp = array[i];
-                    array[i] = array[j];
-                    array[j] = temp;
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
                 }
             }
         }
         System.out.println("Actions: " + actionCounter);
         System.out.println("Sorted array: " + Arrays.toString(array));
+        return array;
     }
 
     /**
@@ -138,10 +153,9 @@ public class Codility {
      * <a href="{@link Codility#CODILITY_LINK}2-arrays/odd_occurrences_in_array/">findExtraElement</a>
      */
     @RecordMethodInfo(link = CODILITY_LINK + "2-arrays/odd_occurrences_in_array/")
-    public static int findExtraElement(int[] A) {
-        System.out.println("Input array: " + Arrays.toString(A));
+    public static int findExtraElement(int[] a) {
         HashSet<Integer> result = new HashSet<>();
-        for (int j : A) {
+        for (int j : a) {
             if (result.contains(j)) {
                 result.remove(j);
             } else {
@@ -263,13 +277,13 @@ public class Codility {
      * <a href="{@link Codility#CODILITY_LINK}4-counting_elements/missing_integer/">missingInteger</a>
      */
     @RecordMethodInfo(link = CODILITY_LINK + "4-counting_elements/missing_integer/")
-    public static int missingInteger(int[] A) {
+    public static int missingInteger(int[] a) {
         Set<Integer> set = new HashSet<>();
-        for (int i = 1; i <= A.length + 1; i++) {
+        for (int i = 1; i <= a.length + 1; i++) {
             set.add(i);
         }
         System.out.println("Set before: " + set);
-        for (int j : A) {
+        for (int j : a) {
             set.remove(j);
         }
         System.out.println("Set after: " + set);

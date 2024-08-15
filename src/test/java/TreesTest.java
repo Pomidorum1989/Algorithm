@@ -1,5 +1,6 @@
 import org.dorum.algo.Trees;
 import org.dorum.algo.Trees.*;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.dorum.algo.Trees.*;
@@ -54,17 +55,17 @@ public class TreesTest {
 
     @Test
     public void maxSumTest() {
-        System.out.println(maxSum(NODE_1));
+        Assertions.assertEquals(6, maxSum(NODE_1));
     }
 
     @Test
     public void isValidBSTTest() {
-        System.out.println(isValidBST(NODE_11));
-        System.out.println(isValidBST(NODE_5));
+        Assertions.assertTrue(isValidBST(NODE_11));
+        Assertions.assertFalse(isValidBST(NODE_5));
     }
 
     @Test
     public void isValidBSTInorderTraversalTest() {
-        System.out.println(isValidBSTInorderTraversal(NODE_11));
+        Assertions.assertTrue(isValidBSTInorderTraversal(NODE_11));
     }
 }

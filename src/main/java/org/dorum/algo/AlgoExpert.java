@@ -2,9 +2,7 @@ package org.dorum.algo;
 
 import org.dorum.utils.RecordMethodInfo;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class AlgoExpert {
 
@@ -14,32 +12,38 @@ public class AlgoExpert {
      * <a href="{@link AlgoExpert#ALGO_EXPERT_LINK}">sumOfTwo</a>
      */
     @RecordMethodInfo(link = ALGO_EXPERT_LINK)
-    public static void sumOfTwo(int[] array, int sum) {
+    public static List<int[]> sumOfTwo(int[] array, int sum) {
+        List<int[]> list = new ArrayList<>();
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < array.length; i++) {
             if (map.containsKey(array[i])) {
                 System.out.println("Numbers " + array[i] + " and " + array[map.get(array[i])]);
+                list.add(new int[]{array[i], array[map.get(array[i])]});
             }
             map.put(sum - array[i], i);
         }
         System.out.println(map);
+        return list;
     }
 
     /**
      * <a href="{@link AlgoExpert#ALGO_EXPERT_LINK}">sumOfNumber</a>
      */
     @RecordMethodInfo(link = ALGO_EXPERT_LINK)
-    public static void sumOfNumber(int[] array, int sum) {
+    public static List<int[]> sumOfNumber(int[] array, int sum) {
+        List<int[]> list = new ArrayList<>();
         for (int i = 0; i < array.length; i++) {
             for (int j = i + 1; j < array.length; j++) {
                 if (array[i] + array[j] == sum) {
                     System.out.println(array[i] + " with index '" + i + "'");
                     System.out.println(array[j] + " with index '" + j + "'");
+                    list.add(new int[]{i, j});
                 } else {
                     System.out.println(array[i] + " + " + array[j] + " = " + (array[i] + array[j]));
                 }
             }
         }
+        return list;
     }
 
     /**

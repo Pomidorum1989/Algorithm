@@ -16,7 +16,7 @@ public class LinkedIn {
      * <a href="{@link LinkedIn#LINKEDIN_LINK}">countWordsInSentence</a>
      */
     @RecordMethodInfo(link = LINKEDIN_LINK)
-    public static void countWordsInSentence(String input) {
+    public static String countWordsInSentence(String input) {
         String[] exclude = {",", "\\.", " a ", " the ", " to ", " of ", " are ", " is "};
         for (String string : exclude) {
             input = input.replaceAll(string, " ");
@@ -53,6 +53,7 @@ public class LinkedIn {
 
         System.out.println("Max word: " + maxWord);
         System.out.println("_____________________________________________________________________________________");
+        return maxWord;
     }
 
     /**
@@ -183,9 +184,11 @@ public class LinkedIn {
 
     /**
      * <a href="{@link LinkedIn#LINKEDIN_LINK}">countWordsInSentence</a>
+     *
+     * @return
      */
     @RecordMethodInfo(link = LINKEDIN_LINK)
-    public static void vowelsCounter(String word) {
+    public static int vowelsCounter(String word) {
         char[] vowels = new char[]{'a', 'e', 'i', 'o', 'u', 'y'};
         String vowelsAsString = "aeiouy";
         int numberOfVowels = 0;
@@ -208,6 +211,7 @@ public class LinkedIn {
 
         System.out.println("Vowels:" + numberOfVowels);
         System.out.println("Consonants:" + (word.length() - numberOfVowels));
+        return numberOfVowels;
     }
 
     /**

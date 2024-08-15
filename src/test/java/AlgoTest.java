@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -5,30 +6,27 @@ import java.util.Arrays;
 import static org.dorum.algo.AlgoExpert.*;
 
 public class AlgoTest {
-    private static final int[] array;
+    private static final int[] array = new int[]{2, 1, 3, 5, 8, 6, 4};;
 
-    static {
-        array = new int[]{2, 1, 3, 5, 8, 6, 4};
-        Arrays.sort(array);
-    }
 
     @Test
     public void binarySearchTest() {
-        System.out.println(binarySearch(array, 0));
+        Arrays.sort(array);
+        Assertions.assertEquals(2, binarySearch(array, 3));
+        Assertions.assertEquals(-1, binarySearch(array, 0));
     }
 
     @Test
     public void validateSubSequenceTest() {
-        System.out.println(validateSubSequence(array, new int[]{}));
+        Assertions.assertFalse(validateSubSequence(array, new int[]{3, 1}));
+        Assertions.assertTrue(validateSubSequence(array, new int[]{2, 1, 3}));
     }
 
     @Test
     public void sumOfNumberTest() {
-        sumOfNumber(array, 10);
-    }
-
-    @Test
-    public void sumOfTwoTest() {
-        sumOfTwo(array, 10);
+        Assertions.assertArrayEquals(new int[]{0, 4}, sumOfNumber(array, 10).get(0));
+        Assertions.assertArrayEquals(new int[]{5, 6}, sumOfNumber(array, 10).get(1));
+        Assertions.assertArrayEquals(new int[]{8, 2}, sumOfTwo(array, 10).get(0));
+        Assertions.assertArrayEquals(new int[]{4, 6}, sumOfTwo(array, 10).get(1));
     }
 }

@@ -1,4 +1,5 @@
 import org.dorum.algo.LinkedList;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.dorum.algo.LinkedList.*;
@@ -21,11 +22,11 @@ public class LinkedListTest {
 
     @Test
     public void isPalindromeTest() {
-        System.out.println(isPalindrome(left));
-        System.out.println(isPalindrome(right));
-        System.out.println(isPalindrome1(right));
-        System.out.println(isPalindrome(left));
-        System.out.println(isPalindrome1(left));
+        Assertions.assertTrue(isPalindrome(left));
+        Assertions.assertFalse(isPalindrome(right));
+        Assertions.assertFalse(isPalindrome1(right));
+        Assertions.assertTrue(isPalindrome(left));
+        Assertions.assertTrue(isPalindrome1(left));
     }
 
     @Test
@@ -36,10 +37,10 @@ public class LinkedListTest {
         loop.next.next.next = newNode(-4);
         loop.next.next.next.next = loop.next;
 
-        System.out.println(hasCycle(loop));
-        System.out.println(hasCycle(right));
-        System.out.println(hasCycle1(loop));
-        System.out.println(hasCycle1(right));
+        Assertions.assertTrue(hasCycle(loop));
+        Assertions.assertFalse(hasCycle(right));
+        Assertions.assertTrue(hasCycle1(loop));
+        Assertions.assertFalse(hasCycle1(right));
     }
 
     @Test

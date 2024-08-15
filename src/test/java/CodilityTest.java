@@ -1,71 +1,72 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.dorum.algo.Codility.*;
 
 public class CodilityTest {
+    private static final int[] ARRAY = new int[]{8, 5, 6, 7, 4, 5, 3, 1};
 
     @Test
     public void passingCarsTest() {
-        System.out.println(passingCars(new int[]{0, 1, 0, 1, 1}));
-        System.out.println(passingCars1(new int[]{0, 1, 0, 1, 1}));
+        Assertions.assertEquals(5, passingCars(new int[]{0, 1, 0, 1, 1}));
+        Assertions.assertEquals(5, passingCars1(new int[]{0, 1, 0, 1, 1}));
     }
 
     @Test
     public void missingIntegerTest() {
-        System.out.println(missingInteger(new int[]{1, 2, 3}));
-        System.out.println(missingInteger(new int[]{1, 3, 6, 4, 1, 2}));
+        Assertions.assertEquals(4, missingInteger(new int[]{1, 2, 3}));
+        Assertions.assertEquals(5, missingInteger(new int[]{1, 3, 6, 4, 1, 2}));
     }
 
     @Test
     public void frogRiverOneTest() {
-        System.out.println(frogRiverOne(5, new int[]{1, 3, 1, 4, 2, 3, 5, 4}));
+        Assertions.assertEquals(6, frogRiverOne(5, new int[]{1, 3, 1, 4, 2, 3, 5, 4}));
     }
 
     @Test
     public void frogJumpTest() {
-        System.out.println("Amount of jumps: " + frogJump(10, 85, 30));
+        Assertions.assertEquals(3, frogJump(10, 85, 30));
     }
 
     @Test
     public void binaryGapTest() {
-        System.out.println(binaryGap(9));
-        System.out.println(binaryGap(15));
-        System.out.println(binaryGap(1041));
-        System.out.println(binaryGap(32));
+        Assertions.assertEquals(2, binaryGap(9));
+        Assertions.assertEquals(0, binaryGap(15));
+        Assertions.assertEquals(5, binaryGap(1041));
+        Assertions.assertEquals(0, binaryGap(32));
     }
 
     @Test
     public void findExtraElementTest() {
-        System.out.println(findExtraElement(new int[]{9, 3, 9, 3, 9, 7, 9}));
-        System.out.println(findExtraElement(new int[]{2, 2, 3, 3, 4}));
-        System.out.println(findExtraElement(new int[]{3, 3, 8, 8, 8, 8, 3}));
-        System.out.println(findExtraElement(new int[]{2, 3, 1, 5}));
+        Assertions.assertEquals(7, findExtraElement(new int[]{9, 3, 9, 3, 9, 7, 9}));
+        Assertions.assertEquals(4, findExtraElement(new int[]{2, 2, 3, 3, 4}));
+        Assertions.assertEquals(3, findExtraElement(new int[]{3, 3, 8, 8, 8, 8, 3}));
+        Assertions.assertEquals(1, findExtraElement(new int[]{2, 3, 1, 5}));
     }
 
     @Test
     public void palindromeCheckTest() {
         String text = "abcdcba", text1 = "abcdcbc", text2 = "abccba", text3 = "abccbc";
-        System.out.println("Is palindrome: " + palindromeCheck(text));
-        System.out.println("Is palindrome: " + palindromeCheck(text1));
-        System.out.println("Is palindrome: " + palindromeCheck1(text));
-        System.out.println("Is palindrome: " + palindromeCheck1(text1));
-        System.out.println("Is palindrome: " + palindromeCheck2(text));
-        System.out.println("Is palindrome: " + palindromeCheck2(text1));
-        System.out.println("Is palindrome: " + palindromeCheck2(text2));
-        System.out.println("Is palindrome: " + palindromeCheck2(text3));
-        System.out.println("Is palindrome: " + palindromeCheck3(text, 0));
-        System.out.println("Is palindrome: " + palindromeCheck3(text3, 0));
+        Assertions.assertTrue(palindromeCheck(text));
+        Assertions.assertFalse(palindromeCheck(text1));
+        Assertions.assertTrue(palindromeCheck1(text));
+        Assertions.assertFalse(palindromeCheck1(text1));
+        Assertions.assertTrue(palindromeCheck2(text));
+        Assertions.assertFalse(palindromeCheck2(text1));
+        Assertions.assertTrue(palindromeCheck2(text2));
+        Assertions.assertFalse(palindromeCheck2(text3));
+        Assertions.assertTrue(palindromeCheck3(text, 0));
+        Assertions.assertFalse(palindromeCheck3(text3, 0));
     }
 
     @Test
     public void findMinimumValueIndexTest() {
-        int[] array = new int[]{8, 5, 6, 7, 4, 5, 3, 1};
-        findMinimumValueIndex(array);
+        Assertions.assertEquals(6, findMinimumValueIndex(ARRAY));
+        Assertions.assertEquals(6, findMinimumValueIndex1(ARRAY));
     }
 
     @Test
     public void bubbleSortTest() {
-        int[] array1 = new int[]{8, 5, 6, 7, 4, 5, 3, 1};
-        bubbleSort(array1);
+        Assertions.assertArrayEquals(new int[]{8, 7, 6, 5, 5, 4, 3, 1}, bubbleSort(ARRAY));
     }
 }

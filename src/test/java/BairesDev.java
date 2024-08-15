@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.dorum.algo.BairesDev.*;
@@ -21,7 +22,7 @@ public class BairesDev {
                 {987654421, 3},
                 {987654001, 4}
         };
-        restaurant(array.length, array2);
+        Assertions.assertEquals(5, restaurant(array.length, array2));
     }
 
     @Test
@@ -31,6 +32,6 @@ public class BairesDev {
 
     @Test
     public void timeConverterTest() {
-        timeConverter(173635816);
+        Assertions.assertEquals("5 years 184 days 16 hours 10 minutes 16 seconds", timeConverter(173635816));
     }
 }

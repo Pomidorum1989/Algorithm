@@ -38,10 +38,8 @@ public class LinkedIn {
             counter = 0;
         }
         System.out.println("Modified map:" + wordCounter);
-
         int maxValue = 0;
         String maxWord = "";
-
         List<Map.Entry<String, Integer>> entries = new ArrayList<>(wordCounter.entrySet());
         Collections.reverse(entries);
         for (Map.Entry<String, Integer> entry : entries) {
@@ -50,7 +48,6 @@ public class LinkedIn {
                 maxWord = entry.getKey();
             }
         }
-
         System.out.println("Max word: " + maxWord);
         System.out.println("_____________________________________________________________________________________");
         return maxWord;
@@ -184,8 +181,6 @@ public class LinkedIn {
 
     /**
      * <a href="{@link LinkedIn#LINKEDIN_LINK}">countWordsInSentence</a>
-     *
-     * @return
      */
     @RecordMethodInfo(link = LINKEDIN_LINK)
     public static int vowelsCounter(String word) {
@@ -221,10 +216,8 @@ public class LinkedIn {
     public static boolean palindromeChecker(String word) {
         System.out.println("Input: " + word);
         String reversed = new StringBuilder(word).reverse().toString();
-
         boolean result = IntStream.range(0, word.length() / 2).
                 allMatch(i -> word.charAt(i) == word.charAt(word.length() - i - 1));
-
         char[] backWardsWordCharArray = word.toCharArray();
         StringBuilder backWardsWord = new StringBuilder();
         for (int i = backWardsWordCharArray.length; i > 0; i--) {
@@ -244,9 +237,10 @@ public class LinkedIn {
      * <a href="{@link LinkedIn#LINKEDIN_LINK}">countWordsInSentence</a>
      */
     @RecordMethodInfo(link = LINKEDIN_LINK)
-    public static void compare2strings(String one, String two) {
+    public static int compare2strings(String one, String two) {
         int res = one.compareTo(two);
         System.out.println(res);
+        return res;
     }
 
     /**
@@ -270,16 +264,15 @@ public class LinkedIn {
      */
     @RecordMethodInfo(link = LINKEDIN_LINK)
     public static int singleNumber(int[] nums) {
-        int result = nums[0];
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
                 if (nums[i] == nums[j]) {
                     System.out.println("Number '" + nums[i] + "' has pair");
-                    break;
+                    return nums[i];
                 }
             }
         }
-        return result;
+        return -1;
     }
 
     /**
@@ -301,7 +294,7 @@ public class LinkedIn {
      * <a href="{@link LinkedIn#LINKEDIN_LINK}">countWordsInSentence</a>
      */
     @RecordMethodInfo(link = LINKEDIN_LINK)
-    private static int removeDuplicates(int[] nums) {
+    public static int removeDuplicates(int[] nums) {
         int k = 0;
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
@@ -309,8 +302,8 @@ public class LinkedIn {
                     break;
                 }
                 if (nums[i] == nums[j]) {
-                    System.out.println("index i: " + i + " index j: " + j);
-                    System.out.println("value i: " + nums[i] + " value j: " + nums[j]);
+                    System.out.println("index i: " + i + ", index j: " + j);
+                    System.out.println("value i: " + nums[i] + ", value j: " + nums[j]);
                     System.out.println("+++++++++++++++++++++++++++++++++++++++++++++");
                     k++;
                     nums[i] = 101;
@@ -336,13 +329,7 @@ public class LinkedIn {
      * <a href="{@link LinkedIn#LINKEDIN_LINK}">countWordsInSentence</a>
      */
     @RecordMethodInfo(link = LINKEDIN_LINK)
-    private static void swap() {
-//        int[] nums = new int[]{1, 2, 3, 4, 5, 6, 7};
-//        int k = 3;
-
-        int[] nums = new int[]{1, 2};
-        int k = 2;
-
+    public static int[] swap(int[] nums, int k) {
         int[] newArray = new int[nums.length];
         System.out.println("Initial array: " + Arrays.toString(nums));
         if (nums.length == 2) {
@@ -352,13 +339,9 @@ public class LinkedIn {
                 nums[1] = temp;
             }
         }
-
         if (nums.length > 2) {
-            for (int i = 0; i < k; i++) {
-                newArray[i] = nums[nums.length - k + i];
-            }
+            if (k >= 0) System.arraycopy(nums, nums.length - k, newArray, 0, k);
             System.out.println("New array: " + Arrays.toString(newArray));
-
             for (int i = 0; i < nums.length - k; i++) {
                 newArray[i + k] = nums[i];
                 System.out.println(i + 1 + " add " + Arrays.toString(newArray));
@@ -366,14 +349,14 @@ public class LinkedIn {
             System.arraycopy(newArray, 0, nums, 0, newArray.length);
         }
         System.out.println("Result: " + Arrays.toString(nums));
+        return nums;
     }
 
     /**
      * <a href="{@link LinkedIn#LINKEDIN_LINK}">countWordsInSentence</a>
      */
     @RecordMethodInfo(link = LINKEDIN_LINK)
-    private static void profit() {
-        int[] prices = new int[]{7, 1, 5, 3, 6, 4};
+    public static int profit(int[] prices) {
         int profit = 0;
         for (int i = 0; i < prices.length - 1; i++) {
             int currentProfit;
@@ -384,6 +367,7 @@ public class LinkedIn {
             }
         }
         System.out.println("Profit: " + profit);
+        return profit;
     }
 
     /**

@@ -37,6 +37,7 @@ public class LinkedInTest {
 
     @Test
     public void findParenthesesTest() {
+        Assertions.assertTrue(findParentheses("()[]"));
         Assertions.assertTrue(findParentheses1("()[]"));
         Assertions.assertTrue(findParentheses1("(Valik)[Ira]"));
         Assertions.assertFalse(findParentheses1("([>"));
@@ -69,7 +70,8 @@ public class LinkedInTest {
         node3.setNextNodeRef(node4);
         node4.setNextNodeRef(node5);
 
-//        deleteMiddleNode();
+        CustomNode.printList(head);
+        deleteMiddleNode(new CustomNode[]{head, node2, node3, node4, node5});
         CustomNode.printList(head);
     }
 
@@ -83,5 +85,44 @@ public class LinkedInTest {
     @Test
     public void vowelsCounterTest() {
         Assertions.assertEquals(4, vowelsCounter("Valentine"));
+    }
+
+    @Test
+    public void swapTest() {
+        Assertions.assertArrayEquals(new int[]{5, 6, 7, 1, 2, 3, 4}, swap(new int[]{1, 2, 3, 4, 5, 6, 7}, 3));
+        Assertions.assertArrayEquals(new int[]{1, 2}, swap(new int[]{1, 2}, 2));
+    }
+
+    @Test
+    public void profitTest() {
+        Assertions.assertEquals(7, profit(new int[]{7, 1, 5, 3, 6, 4}));
+    }
+
+    @Test
+    public void romanToIntTest() {
+        Assertions.assertEquals(14, romanToInt("XIV"));
+    }
+
+    @Test
+    public void compareStringsTest() {
+        Assertions.assertEquals(-2, compare2strings("123", "321"));
+        Assertions.assertEquals(0, compare2strings("123", "123"));
+    }
+
+    @Test
+    public void singleNumberTest() {
+        Assertions.assertEquals(-1, singleNumber(new int[]{1, 2}));
+        Assertions.assertEquals(2, singleNumber(new int[]{1, 2, 2}));
+    }
+
+    @Test
+    public void containsDuplicateTest() {
+        Assertions.assertTrue(containsDuplicate(new int[]{1, 2, 2}));
+        Assertions.assertFalse(containsDuplicate(new int[]{1, 2}));
+    }
+
+    @Test
+    public void removeDuplicatesTest() {
+        Assertions.assertEquals(2, removeDuplicates(new int[]{1, 2, 2, 2} ));
     }
 }

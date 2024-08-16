@@ -186,15 +186,15 @@ public class Codility {
      * <a href="{@link Codility#CODILITY_LINK}3-time_complexity/perm_missing_elem/">permMissingElem</a>
      */
     @RecordMethodInfo(link = CODILITY_LINK + "3-time_complexity/perm_missing_elem/")
-    public static int permMissingElem(int[] A) {
-        if (A.length == 0) {
+    public static int permMissingElem(int[] array) {
+        if (array.length == 0) {
             return 1;
         }
-        int maximumNumber = A.length + 1;
+        int maximumNumber = array.length + 1;
         int totalSum = (maximumNumber * (maximumNumber + 1)) / 2;
         System.out.println("Total sum: " + totalSum);
         int partialSum = 0;
-        for (int j : A) {
+        for (int j : array) {
             partialSum += j;
         }
         System.out.println("Partial sum: " + partialSum);
@@ -205,14 +205,14 @@ public class Codility {
      * <a href="{@link Codility#CODILITY_LINK}3-time_complexity/tapeEquilibrium/">tape_equilibrium/</a>
      */
     @RecordMethodInfo(link = CODILITY_LINK + "3-time_complexity/tape_equilibrium/")
-    public static int tapeEquilibrium(int[] A) {
+    public static int tapeEquilibrium(int[] array) {
         int totalSum = 0, result = Integer.MAX_VALUE;
-        for (int element : A) {
+        for (int element : array) {
             totalSum += element;
         }
         int leftSum = 0;
-        for (int i = 0; i < A.length - 1; i++) {
-            leftSum += A[i];
+        for (int i = 0; i < array.length - 1; i++) {
+            leftSum += array[i];
             int rightSum = totalSum - leftSum;
             int diff = Math.abs(leftSum - rightSum);
             if (diff < result) {
@@ -226,13 +226,13 @@ public class Codility {
      * <a href="{@link Codility#CODILITY_LINK}4-counting_elements/frog_river_one/">frogRiverOne</a>
      */
     @RecordMethodInfo(link = CODILITY_LINK + "4-counting_elements/frog_river_one/")
-    public static int frogRiverOne(int X, int[] A) {
+    public static int frogRiverOne(int x, int[] array) {
         Set<Integer> steps = new HashSet<>();
-        for (int i = 1; i <= X; i++) {
+        for (int i = 1; i <= x; i++) {
             steps.add(i);
         }
-        for (int i = 0; i < A.length; i++) {
-            if (steps.remove(A[i])) {
+        for (int i = 0; i < array.length; i++) {
+            if (steps.remove(array[i])) {
                 if (steps.isEmpty()) {
                     return i;
                 }
@@ -245,10 +245,10 @@ public class Codility {
      * <a href="{@link Codility#CODILITY_LINK}4-counting_elements/perm_check">permCheck</a>
      */
     @RecordMethodInfo(link = CODILITY_LINK + "4-counting_elements/perm_check")
-    public static int permCheck(int[] A) {
-        int expectedSum = (A.length * (A.length + 1)) / 2;
+    public static int permCheck(int[] array) {
+        int expectedSum = (array.length * (array.length + 1)) / 2;
         int currentSum = 0;
-        for (int j : A) {
+        for (int j : array) {
             currentSum = currentSum + j;
         }
         return currentSum == expectedSum ? 1 : 0;
@@ -258,12 +258,12 @@ public class Codility {
      * <a href="{@link Codility#CODILITY_LINK}4-counting_elements/perm_check">permCheck1</a>
      */
     @RecordMethodInfo(link = CODILITY_LINK + "4-counting_elements/perm_check")
-    public static int permCheck1(int[] A) {
+    public static int permCheck1(int[] array) {
         Set<Integer> set = new HashSet<>();
-        for (int i = 1; i <= A.length; i++) {
+        for (int i = 1; i <= array.length; i++) {
             set.add(i);
         }
-        for (int j : A) {
+        for (int j : array) {
             if (set.remove(j)) {
                 if (set.isEmpty()) {
                     return 1;
@@ -294,11 +294,11 @@ public class Codility {
      * <a href="{@link Codility#CODILITY_LINK}5-prefix_sums/passing_cars">passingCars</a>
      */
     @RecordMethodInfo(link = CODILITY_LINK + "5-prefix_sum/passing_cars")
-    public static int passingCars(int[] A) {
-        System.out.println("Input array:" + Arrays.toString(A));
+    public static int passingCars(int[] array) {
+        System.out.println("Input array:" + Arrays.toString(array));
         int carsTravellingEast = 0;
         long passedCars = 0;
-        for (int j : A) {
+        for (int j : array) {
             if (j == 0) {
                 carsTravellingEast++;
             } else {
@@ -315,12 +315,12 @@ public class Codility {
      * <a href="{@link Codility#CODILITY_LINK}5-prefix_sums/">passingCars1</a>
      */
     @RecordMethodInfo(link = CODILITY_LINK + "5-prefix_sum/")
-    public static int passingCars1(int[] A) {
-        System.out.println("Input array:" + Arrays.toString(A));
+    public static int passingCars1(int[] array) {
+        System.out.println("Input array:" + Arrays.toString(array));
         int sum = 0;
-        for (int i = 0; i < A.length - 1; i++) {
-            for (int j = i + 1; j < A.length; j++) {
-                if (A[i] == 0 && A[j] == 1) {
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[i] == 0 && array[j] == 1) {
                     sum++;
                 }
             }

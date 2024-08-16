@@ -134,12 +134,14 @@ public class LeetCodeTest {
 
     @Test
     public void maxProfitTest() {
+        Assertions.assertEquals(5, maxProfit(new int[]{7, 1, 5, 3, 6, 4}));
         Assertions.assertEquals(5, maxProfit1(new int[]{7, 1, 5, 3, 6, 4}));
         Assertions.assertEquals(7, maxProfit2(new int[]{7, 1, 5, 3, 6, 4}));
     }
 
     @Test
     public void rotateTest() {
+        Assertions.assertArrayEquals(new int[]{4, 5, 1, 2, 3}, rotate(new int[]{1, 2, 3, 4, 5}, 2));
         Assertions.assertArrayEquals(new int[]{4, 5, 1, 2, 3}, rotate1(new int[]{1, 2, 3, 4, 5}, 2));
         Assertions.assertArrayEquals(new int[]{5, 6, 7, 1, 2, 3, 4}, rotate2(new int[]{1, 2, 3, 4, 5, 6, 7}, 3));
     }

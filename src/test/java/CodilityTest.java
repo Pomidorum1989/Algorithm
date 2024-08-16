@@ -69,4 +69,20 @@ public class CodilityTest {
     public void bubbleSortTest() {
         Assertions.assertArrayEquals(new int[]{8, 7, 6, 5, 5, 4, 3, 1}, bubbleSort(ARRAY));
     }
+
+    @Test
+    public void permMissingElemTest() {
+        Assertions.assertEquals(4, permMissingElem(new int[]{2, 3, 1, 5}));
+    }
+
+    @Test
+    public void permCheckTest() {
+        Assertions.assertEquals(1, permCheck(new int[]{4, 1, 3, 2}));
+        Assertions.assertEquals(0, permCheck1(new int[]{4, 1, 3}));
+    }
+
+    @Test
+    public void tapeEquilibriumTest() {
+        Assertions.assertEquals(1, tapeEquilibrium(new int[]{3, 1, 2, 4, 3}));
+    }
 }

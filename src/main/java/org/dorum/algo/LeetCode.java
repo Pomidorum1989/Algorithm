@@ -66,7 +66,7 @@ public class LeetCode {
      * <a href="{@link LeetCode#LC_150}92/array/646/">rotate</a>
      */
     @RecordMethodInfo(link = LC_150 + "92/array/646/")
-    public static void rotate(int[] nums, int k) {
+    public static int[] rotate(int[] nums, int k) {
         for (int i = 0; i < k; i++) {
             for (int j = 0; j < nums.length; j++) {
                 int temp = nums[0];
@@ -74,6 +74,7 @@ public class LeetCode {
                 nums[j] = temp;
             }
         }
+        return nums;
     }
 
     /**

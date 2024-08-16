@@ -1,5 +1,4 @@
 import org.dorum.algo.Trees;
-import org.dorum.algo.Trees.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

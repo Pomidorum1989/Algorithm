@@ -2,10 +2,13 @@ package org.dorum.algo;
 
 import org.dorum.utils.RecordMethodInfo;
 
+import java.util.Arrays;
+
 public class Sorting {
 
     @RecordMethodInfo()
     public static void bubbleSort(int[] inputArray) {
+        System.out.println("Input:" + Arrays.toString(inputArray));
         long start = System.currentTimeMillis();
         for (int i = 0; i < inputArray.length - 1; i++) {
             for (int j = 0; j < inputArray.length - i - 1; j++) {
@@ -18,6 +21,7 @@ public class Sorting {
         }
         long end = System.currentTimeMillis();
         System.out.println((end - start) / 1000);
+        System.out.println("Output:" + Arrays.toString(inputArray));
     }
 
     @RecordMethodInfo()

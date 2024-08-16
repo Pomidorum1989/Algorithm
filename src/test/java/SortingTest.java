@@ -1,6 +1,5 @@
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
 import java.util.Random;
 
 import static org.dorum.algo.Sorting.bubbleSort;
@@ -23,13 +22,10 @@ public class SortingTest {
         mergeSort(INPUT_ARRAY);
         long end = System.currentTimeMillis();
         System.out.println((end - start) / 1000);
-
     }
 
     @Test
     public void bubbleSortTest() {
-        System.out.println("Input:" + Arrays.toString(INPUT_ARRAY));
         bubbleSort(INPUT_ARRAY);
-        System.out.println("Output:" + Arrays.toString(INPUT_ARRAY));
     }
 }

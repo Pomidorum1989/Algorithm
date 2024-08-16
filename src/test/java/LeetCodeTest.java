@@ -193,4 +193,10 @@ public class LeetCodeTest {
     public void isHappyTest() {
         Assertions.assertTrue(isHappy(19));
     }
+
+    @Test
+    public void canJumpTest() {
+        Assertions.assertTrue(canJump(new int[]{2, 3, 1, 1, 4}));
+        Assertions.assertFalse(canJump(new int[]{3, 2, 1, 0, 4}));
+    }
 }

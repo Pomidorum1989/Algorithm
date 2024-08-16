@@ -78,7 +78,6 @@ public class LeetCode {
 
     /**
      * <a href="{@link LeetCode#LC_150}92/array/646/">rotate1</a>
-     *
      */
     @RecordMethodInfo(link = LC_150 + "92/array/646/")
     public static int[] rotate1(int[] nums, int k) {
@@ -1051,5 +1050,23 @@ public class LeetCode {
                 set.add(sum);
             }
         }
+    }
+
+    /**
+     * <a href="{@link LeetCode#LEET_CODE_PROBLEM}happy-number/">jump-game</a>
+     */
+    @RecordMethodInfo(link = LEET_CODE_PROBLEM + "jump-game")
+    public static boolean canJump(int[] nums) {
+        int maxReach = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (i > maxReach) {
+                return false;
+            }
+            maxReach = Math.max(maxReach, i + nums[i]);
+            if (maxReach >= nums.length - 1) {
+                return true;
+            }
+        }
+        return false;
     }
 }

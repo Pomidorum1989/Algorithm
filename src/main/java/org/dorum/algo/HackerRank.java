@@ -32,32 +32,6 @@ public class HackerRank {
     }
 
     /**
-     * <a href="{@link HackerRank#HACKER_RANK_LINK}mini-max-sum/problem">miniMaxSum</a>
-     */
-    @RecordMethodInfo(link = HACKER_RANK_LINK + "mini-max-sum/problem")
-    public static void miniMaxSum(List<Integer> arr) {
-        long maximumSum = Long.MIN_VALUE;
-        long minimumSum = Long.MAX_VALUE;
-        for (int i = 0; i < arr.size(); i++) {
-            long sum = 0;
-            for (int j = 0; j < arr.size(); j++) {
-                if (j == i) {
-                    continue;
-                }
-                sum = sum + arr.get(j);
-            }
-            if (maximumSum < sum) {
-                maximumSum = sum;
-            }
-
-            if (sum < minimumSum) {
-                minimumSum = sum;
-            }
-        }
-        System.out.println(minimumSum + " " + maximumSum);
-    }
-
-    /**
      * <a href="{@link HackerRank#HACKER_RANK_LINK}time-conversion/problem">timeConversion</a>
      */
     @RecordMethodInfo(link = HACKER_RANK_LINK + "time-conversion/problem")
@@ -234,10 +208,37 @@ public class HackerRank {
     }
 
     /**
+     * <a href="{@link HackerRank#HACKER_RANK_LINK}mini-max-sum/problem">miniMaxSum</a>
+     */
+    @RecordMethodInfo(link = HACKER_RANK_LINK + "mini-max-sum/problem")
+    public static String miniMaxSum(List<Integer> arr) {
+        long maximumSum = Long.MIN_VALUE;
+        long minimumSum = Long.MAX_VALUE;
+        for (int i = 0; i < arr.size(); i++) {
+            long sum = 0;
+            for (int j = 0; j < arr.size(); j++) {
+                if (j == i) {
+                    continue;
+                }
+                sum = sum + arr.get(j);
+            }
+            if (maximumSum < sum) {
+                maximumSum = sum;
+            }
+
+            if (sum < minimumSum) {
+                minimumSum = sum;
+            }
+        }
+        System.out.println(minimumSum + " " + maximumSum);
+        return minimumSum + "-" + maximumSum;
+    }
+
+    /**
      * <a href="{@link HackerRank#HACKER_RANK_LINK}mini-max-sum/problem"></a>
      */
     @RecordMethodInfo(link = HACKER_RANK_LINK + "mini-max-sum/problem")
-    public static void miniMaxSum2(List<Integer> arr) {
+    public static String miniMaxSum2(List<Integer> arr) {
         long maxSum = Long.MIN_VALUE;
         long minSum = Long.MAX_VALUE;
         long temp = 0;
@@ -254,6 +255,7 @@ public class HackerRank {
             temp = 0;
         }
         System.out.println(minSum + " " + maxSum);
+        return minSum + "-" + maxSum;
     }
 
     /**
@@ -390,7 +392,7 @@ public class HackerRank {
      * <a href="{@link HackerRank#HACKER_RANK_LINK}strings-xor/problem"></a>
      */
     @RecordMethodInfo(link = HACKER_RANK_LINK + "strings-xor/problem")
-    public static void xor() {
+    public static String xor() {
         String s, t;
         Scanner in = new Scanner(System.in);
         s = in.nextLine();
@@ -406,6 +408,7 @@ public class HackerRank {
             }
         }
         System.out.println(xor);
+        return xor.toString();
     }
 
     /**
@@ -515,7 +518,6 @@ public class HackerRank {
         for (int i = 0; i < s.length(); i++) {
             k = k - (k / 26) * 26;
             int characterCode = s.charAt(i) + k;
-
             if (!Character.isLetter(s.charAt(i))) {
                 result.append(s.charAt(i));
             } else {

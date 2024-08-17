@@ -29,17 +29,11 @@ public class Sorting {
         int middleIndex = inputArray.length / 2;
         int[] leftArray = new int[middleIndex];
         int[] rightArray = new int[inputArray.length - middleIndex];
-
         if (inputArray.length < 2) {
             return;
         }
-
         System.arraycopy(inputArray, 0, leftArray, 0, leftArray.length);
         System.arraycopy(inputArray, middleIndex, rightArray, 0, rightArray.length);
-
-//        System.out.println("Left: " + Arrays.toString(leftArray));
-//        System.out.println("Right: " + Arrays.toString(rightArray));
-//        System.out.println("______________________");
 
         mergeSort(leftArray);
         mergeSort(rightArray);

@@ -27,7 +27,8 @@ public class BairesDev {
 
     @Test
     public void cinemaTest() {
-        cinema(5, 12, new int[]{0, 0, 2, 1, 0, 1, 0, 1, 0, 1, 0, 1});
+        Assertions.assertArrayEquals(new int[]{0, 0, 2, 1, 0, 1, 0, 1, 0, 1, 0, 1},
+                cinema(5, 12, new int[]{0, 0, 2, 1, 0, 1, 0, 1, 0, 1, 0, 1}));
     }
 
     @Test

@@ -10,7 +10,6 @@ public class HabrTest {
     public void closestNumberTest() {
         int[] array = new int[]{3, 4, 6, 9, 10, 12, 14, 15, 17, 19, 21};
         int[] array1 = new int[]{};
-
         Assertions.assertEquals(12, closestNumber(12, array));
         Assertions.assertEquals(12, closestNumber(13, array));
         Assertions.assertEquals(-1, closestNumber(2, array));

@@ -2,6 +2,7 @@ package org.dorum.algo;
 
 import org.dorum.utils.RecordMethodInfo;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 public class Habr {
@@ -13,8 +14,8 @@ public class Habr {
      */
     @RecordMethodInfo(link = HABR_LINK + "779224")
     public static int closestNumber(Integer number, int[] array) {
-//        System.out.println("Input array: " + Arrays.toString(array));
-//        System.out.println("Searching for " + number);
+        System.out.println("Input array: " + Arrays.toString(array));
+        System.out.println("Searching for " + number);
         if (Objects.isNull(number) || array.length == 0 || array[0] > number) {
             return -1;
         } else if (array[array.length - 1] < number) {
@@ -35,8 +36,8 @@ public class Habr {
      */
     @RecordMethodInfo(link = HABR_LINK + "779224")
     public static int closestNumber1(Integer number, int[] array) {
-//        System.out.println("Input array: " + Arrays.toString(array));
-//        System.out.println("Searching for " + number);
+        System.out.println("Input array: " + Arrays.toString(array));
+        System.out.println("Searching for " + number);
         int start = 0;
         int end = array.length - 1;
         if (Objects.isNull(number) || array.length == 0 || array[0] > number) {
@@ -44,7 +45,6 @@ public class Habr {
         } else if (array[end] < number) {
             return array[end];
         }
-
         int answer = -1;
         while (start <= end) {
             int mid = start + (end - start) / 2;

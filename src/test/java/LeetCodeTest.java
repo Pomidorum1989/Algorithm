@@ -65,6 +65,7 @@ public class LeetCodeTest {
 
     @Test
     public void isAnagramTest() {
+        Assertions.assertTrue(isAnagram("abccba", "abccba"));
         Assertions.assertFalse(isAnagram1("ac", "bb"));
         Assertions.assertFalse(isAnagram1("a", "ab"));
         Assertions.assertTrue(isAnagram1("anagram", "nagaram"));
@@ -75,6 +76,7 @@ public class LeetCodeTest {
 
     @Test
     public void isPalindromeTest() {
+        Assertions.assertTrue(isPalindrome("A man, a plan, a canal: Panama"));
         Assertions.assertTrue(isPalindrome1("AB$BA$$"));
         Assertions.assertTrue(isPalindrome2("A man, a plan, a canal: Panama"));
         Assertions.assertTrue(isPalindrome2("ab_a"));
@@ -94,6 +96,7 @@ public class LeetCodeTest {
         Assertions.assertEquals(-4321, reverse1(-1234));
         Assertions.assertEquals(54321, reverse1(12345));
         Assertions.assertArrayEquals(new int[]{5, 4, 3, 2, 1}, reverse(new int[]{1, 2, 3, 4, 5}));
+        Assertions.assertEquals(1101, reverse(1011));
     }
 
     @Test
@@ -125,6 +128,7 @@ public class LeetCodeTest {
 
     @Test
     public void removeDuplicatesTest() {
+        Assertions.assertEquals(5, removeDuplicates(new int[]{1, 2, 2, 3, 4, 5}));
         Assertions.assertEquals(5, removeDuplicates1(new int[]{1, 2, 2, 3, 4, 4, 5}));
         Assertions.assertEquals(5, removeDuplicates2(new int[]{1, 2, 2, 3, 4, 4, 5}));
         Assertions.assertEquals(5, removeDuplicates3(new int[]{1, 1, 1, 2, 2, 3}));
@@ -200,5 +204,36 @@ public class LeetCodeTest {
     public void canJumpTest() {
         Assertions.assertTrue(canJump(new int[]{2, 3, 1, 1, 4}));
         Assertions.assertFalse(canJump(new int[]{3, 2, 1, 0, 4}));
+    }
+
+    @Test
+    public void containsDuplicateTest() {
+        Assertions.assertTrue(containsDuplicate(new int[]{2, 3, 1, 1, 4}));
+        Assertions.assertFalse(containsDuplicate1(new int[]{2, 3, 1, 4}));
+    }
+
+    @Test
+    public void singleNumberTest() {
+        Assertions.assertEquals(3, singleNumber(new int[]{2, 2, 3, 1, 1, 4, 4}));
+    }
+
+    @Test
+    public void reverseStringTest() {
+        Assertions.assertEquals("[k, i, l, a, V]", reverseString("Valik"));
+    }
+
+    @Test
+    public void isUglyTest() {
+        Assertions.assertTrue(isUgly(100));
+    }
+
+    @Test
+    public void lengthOfLastWordTest() {
+        Assertions.assertEquals(7, lengthOfLastWord("I love flowers"));
+    }
+
+    @Test
+    public void canConstructTest() {
+        Assertions.assertTrue(canConstruct("", ""));
     }
 }

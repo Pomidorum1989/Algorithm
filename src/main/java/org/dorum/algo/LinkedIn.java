@@ -184,26 +184,13 @@ public class LinkedIn {
      */
     @RecordMethodInfo(link = LINKEDIN_LINK)
     public static int vowelsCounter(String word) {
-        char[] vowels = new char[]{'a', 'e', 'i', 'o', 'u', 'y'};
         String vowelsAsString = "aeiouy";
         int numberOfVowels = 0;
-        int numberOfConsonants = 0;
-//        for (int i = 0; i < word.length(); i++) {
-//            for (char vowel : vowels) {
-//                if (word.charAt(i) == vowel) {
-//                    numberOfVowels++;
-//                }
-//            }
-//        }
-
         for (char c : word.toCharArray()) {
             if (vowelsAsString.indexOf(c) != -1) {
                 numberOfVowels++;
-            } else {
-                numberOfConsonants++;
             }
         }
-
         System.out.println("Vowels:" + numberOfVowels);
         System.out.println("Consonants:" + (word.length() - numberOfVowels));
         return numberOfVowels;
@@ -216,8 +203,10 @@ public class LinkedIn {
     public static boolean palindromeChecker(String word) {
         System.out.println("Input: " + word);
         String reversed = new StringBuilder(word).reverse().toString();
+        System.out.println("Reversed: " + reversed);
         boolean result = IntStream.range(0, word.length() / 2).
                 allMatch(i -> word.charAt(i) == word.charAt(word.length() - i - 1));
+        System.out.println("Result: " + result);
         char[] backWardsWordCharArray = word.toCharArray();
         StringBuilder backWardsWord = new StringBuilder();
         for (int i = backWardsWordCharArray.length; i > 0; i--) {

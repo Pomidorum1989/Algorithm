@@ -127,7 +127,7 @@ public class LeetCode {
      * <a href="{@link LeetCode#LC_150}92/array/578/">containsDuplicate</a>
      */
     @RecordMethodInfo(link = LC_150 + "92/array/578/")
-    public boolean containsDuplicate(int[] nums) {
+    public static boolean containsDuplicate(int[] nums) {
         for (int i = 0; i < nums.length; i++) {
             for (int j = 0; j < nums.length; j++) {
                 if (nums[i] == nums[j] && i != j) {
@@ -142,7 +142,7 @@ public class LeetCode {
      * <a href="{@link LeetCode#LC_150}92/array/578/">containsDuplicate1</a>
      */
     @RecordMethodInfo(link = LC_150 + "92/array/578/")
-    public boolean containsDuplicate1(int[] nums) {
+    public static boolean containsDuplicate1(int[] nums) {
         Set<Integer> set = new HashSet<>();
         for (int num : nums) {
             if (set.contains(num)) {
@@ -158,7 +158,7 @@ public class LeetCode {
      * <a href="{@link LeetCode#LC_150}92/array/549/">singleNumber</a>
      */
     @RecordMethodInfo(link = LC_150 + "92/array/549/")
-    public int singleNumber(int[] nums) {
+    public static int singleNumber(int[] nums) {
         Set<Integer> set = new HashSet<>();
         for (int num : nums) {
             if (set.contains(num)) {
@@ -273,12 +273,14 @@ public class LeetCode {
      * <a href="{@link LeetCode#LC_150}127/strings/879/">reverseString</a>
      */
     @RecordMethodInfo(link = LC_150 + "127/strings/879/")
-    public static void reverseString(char[] s) {
+    public static String reverseString(String string) {
+        char[] s = string.toCharArray();
         for (int i = 0; i < s.length / 2; i++) {
             char temp = s[i];
             s[i] = s[s.length - 1 - i];
             s[s.length - 1 - i] = temp;
         }
+        return Arrays.toString(s);
     }
 
     /**

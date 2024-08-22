@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.dorum.algo.LinkedList.*;
+import static org.dorum.algo.LinkedList.printList;
 
 public class LinkedListTest {
     private static final LinkedList.Node left;
@@ -47,13 +48,22 @@ public class LinkedListTest {
     public void mergeTwoListsTest() {
         Node head = createLinkedList(7);
         Node head1 = createLinkedList(9);
+        printList(head);
+        printList(head1);
 
         printList(left);
         printList(right);
+
         Node modifiedListHead = removeNthFromEnd(head, 2);
+        printList(modifiedListHead);
+
         deleteNode(head);
         Node reversedHead = reverseList(head);
+        printList(reversedHead);
+
         head = deleteMid(head);
+        printList(head);
+
         Node mergedHead = mergeTwoLists(left, right);
         printList(mergedHead);
     }
